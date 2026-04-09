@@ -1,29 +1,786 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Blushed Brides</title>
-  </head>
+<BaseLayout
+  title="Blushed Brides — Bridal Hair & Makeup, Northern California"
+  description="Bridal hair & makeup for Northern California brides who want to feel like themselves — only more. Book your wedding day artist."
+  canonicalUrl="https://blushedbrides.com/"
+>
 
-  <body class="bg-white text-gray-800">
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Blushed Brides home">Blushed Brides</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/book" class="btn">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-      <h1 class="text-5xl font-semibold tracking-tight">
-        Blushed Brides
-      </h1>
+  <!-- ─── Hero ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal-text">Bridal Hair &amp; Makeup Studio — Northern California</p>
+        <h1 class="hero-headline">
+          <span class="reveal-text">Your wedding day deserves an artist</span>
+          <span class="reveal-text-delay">who shows up like</span>
+          <span class="reveal-text-delay-2" style="color: var(--blush);">it's her wedding too.</span>
+        </h1>
+        <p class="hero-sub reveal-text-delay-2">
+          Bridal hair &amp; makeup for Northern California brides who want to feel like themselves — only more.
+        </p>
+        <div class="hero-cta reveal-text-delay-2">
+          <a href="/book" class="btn">Let's talk about your day &rarr;</a>
+          <p class="availability-note">
+            <span class="avail-dot" aria-hidden="true"></span>
+            Limited dates remaining for 2025
+          </p>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Drop photo at: public/images/hero-cydney.jpg -->
+        <!-- <img src="/images/hero-cydney.jpg" alt="Cydney at work on a bride" fetchpriority="high"> -->
+        <div class="hero-image-placeholder" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-      <p class="mt-6 text-xl text-gray-600 max-w-xl">
-        Bridal beauty that feels effortless, natural, and completely you.
-      </p>
+  <!-- ─── Ticker ───────────────────────────────────────── -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">Bridal Hair &amp; Makeup</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Northern California</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Trial Appointments Available</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Booking 2025 &amp; 2026</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Airbrush Foundation</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Bridal Parties Welcome</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">On-Location Available</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Bridal Hair &amp; Makeup</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Northern California</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Trial Appointments Available</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Booking 2025 &amp; 2026</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Airbrush Foundation</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Bridal Parties Welcome</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">On-Location Available</span><span class="ticker-sep">✦</span>
+    </div>
+  </div>
 
-      <button class="mt-10 px-6 py-3 bg-pink-500 text-white rounded-full text-lg">
-        Check Availability
-      </button>
-    </section>
+  <!-- ─── Services Lookbook ─────────────────────────────── -->
+  <section class="lookbook">
+    <div class="container">
+      <div class="lookbook-header fade-up">
+        <p class="section-eyebrow">What Cydney Offers</p>
+        <h2>Every bride.<br>Every vision.</h2>
+      </div>
+    </div>
 
-  </body>
-</html>
+    <div class="lookbook-inner">
+
+      <div class="lookbook-list">
+        <button class="lookbook-item active" data-service="hair">
+          <span class="lookbook-num">01</span>
+          <span class="lookbook-name">Bridal Hair</span>
+          <span class="lookbook-arrow">&rarr;</span>
+        </button>
+        <button class="lookbook-item" data-service="makeup">
+          <span class="lookbook-num">02</span>
+          <span class="lookbook-name">Bridal Makeup</span>
+          <span class="lookbook-arrow">&rarr;</span>
+        </button>
+        <button class="lookbook-item" data-service="party">
+          <span class="lookbook-num">03</span>
+          <span class="lookbook-name">Bridal Party</span>
+          <span class="lookbook-arrow">&rarr;</span>
+        </button>
+        <a href="/services" class="lookbook-all">View all services &rarr;</a>
+      </div>
+
+      <div class="lookbook-stage">
+
+        <div class="lookbook-panel active" data-service="hair">
+          <!-- Drop photo at: public/images/service-hair.jpg -->
+          <div class="lookbook-img-placeholder" style="--ph-from: #F0D4DC; --ph-to: #C97B8F;"></div>
+          <div class="lookbook-caption">
+            <h3>Bridal Hair</h3>
+            <p>Updos, soft waves, braids, extensions — styled to last from first look to last dance.</p>
+            <a href="/services#hair" class="service-link">Explore hair &rarr;</a>
+          </div>
+        </div>
+
+        <div class="lookbook-panel" data-service="makeup">
+          <!-- Drop photo at: public/images/service-makeup.jpg -->
+          <div class="lookbook-img-placeholder" style="--ph-from: #d4a0af; --ph-to: #8B4A5C;"></div>
+          <div class="lookbook-caption">
+            <h3>Bridal Makeup</h3>
+            <p>Flawless, camera-ready, and still unmistakably you. Airbrush available.</p>
+            <a href="/services#makeup" class="service-link">Explore makeup &rarr;</a>
+          </div>
+        </div>
+
+        <div class="lookbook-panel" data-service="party">
+          <!-- Drop photo at: public/images/service-party.jpg -->
+          <div class="lookbook-img-placeholder" style="--ph-from: #e8c4ce; --ph-to: #a05870;"></div>
+          <div class="lookbook-caption">
+            <h3>Bridal Party</h3>
+            <p>Hair and makeup for your whole crew — coordinated, calm, and on schedule.</p>
+            <a href="/services#party" class="service-link">Explore packages &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── The Morning Of ────────────────────────────────── -->
+  <section class="morning-of">
+    <div class="morning-sticky">
+
+      <div class="morning-images">
+        <div class="morning-img active" data-moment="0" style="--ph-from: #1a1a2e; --ph-to: #2d1b2e;"></div>
+        <div class="morning-img" data-moment="1" style="--ph-from: #2d1b2e; --ph-to: #4a2030;"></div>
+        <div class="morning-img" data-moment="2" style="--ph-from: #5c3040; --ph-to: #8B4A5C;"></div>
+        <div class="morning-img" data-moment="3" style="--ph-from: #8B4A5C; --ph-to: #C97B8F;"></div>
+        <div class="morning-img" data-moment="4" style="--ph-from: #C97B8F; --ph-to: #F0D4DC;"></div>
+      </div>
+
+      <div class="morning-overlay"></div>
+
+      <div class="morning-content">
+        <div class="moment active" data-moment="0">
+          <span class="moment-time">5:30 AM</span>
+          <p class="moment-text">The alarm goes off.<br>Today is the day.</p>
+        </div>
+        <div class="moment" data-moment="1">
+          <span class="moment-time">6:30 AM</span>
+          <p class="moment-text">Cydney arrives.<br>The energy in the room shifts.</p>
+        </div>
+        <div class="moment" data-moment="2">
+          <span class="moment-time">7:15 AM</span>
+          <p class="moment-text">Hair pinned.<br>Coffee in hand.<br>Laughter you didn't expect.</p>
+        </div>
+        <div class="moment" data-moment="3">
+          <span class="moment-time">8:45 AM</span>
+          <p class="moment-text">Makeup.<br>You watch yourself become<br>the version you imagined.</p>
+        </div>
+        <div class="moment" data-moment="4">
+          <span class="moment-time">10:30 AM</span>
+          <p class="moment-text">You look in the mirror.<br><em>She smiles back.</em></p>
+        </div>
+      </div>
+
+      <div class="morning-progress-bar">
+        <div class="morning-progress-fill"></div>
+      </div>
+
+      <div class="morning-dots">
+        <button class="morning-dot active" data-moment="0" aria-label="5:30 AM"></button>
+        <button class="morning-dot" data-moment="1" aria-label="6:30 AM"></button>
+        <button class="morning-dot" data-moment="2" aria-label="7:15 AM"></button>
+        <button class="morning-dot" data-moment="3" aria-label="8:45 AM"></button>
+        <button class="morning-dot" data-moment="4" aria-label="10:30 AM"></button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Gallery Preview ───────────────────────────────── -->
+  <section class="gallery-preview">
+    <div class="container">
+
+      <div class="gallery-header fade-up">
+        <p class="section-eyebrow">The Work</p>
+        <h2 class="gallery-headline">Real brides.<br><em>Real mornings.</em></h2>
+        <a href="/gallery" class="btn btn-outline">View full gallery &rarr;</a>
+      </div>
+
+      <div class="gallery-grid fade-up">
+        <div class="gallery-cell large" style="--ph-from: #C97B8F; --ph-to: #8B4A5C;">
+          <!-- public/images/gallery-1.jpg -->
+        </div>
+        <div class="gallery-cell" style="--ph-from: #F0D4DC; --ph-to: #C97B8F;">
+          <!-- public/images/gallery-2.jpg -->
+        </div>
+        <div class="gallery-cell" style="--ph-from: #d4a0af; --ph-to: #8B4A5C;">
+          <!-- public/images/gallery-3.jpg -->
+        </div>
+        <div class="gallery-cell wide" style="--ph-from: #8B4A5C; --ph-to: #C97B8F;">
+          <!-- public/images/gallery-4.jpg -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── About Teaser ─────────────────────────────────── -->
+  <section class="about-teaser">
+    <div class="container about-inner">
+      <div class="about-image fade-up">
+        <!-- public/images/cydney-portrait.jpg -->
+        <div class="about-placeholder"></div>
+      </div>
+      <div class="about-content fade-up">
+        <p class="section-eyebrow">Meet Cydney</p>
+        <h2>The tone for the whole&nbsp;morning starts here.</h2>
+        <p class="about-body">
+          I've been doing this long enough to know that the hair and makeup artist sets the tone for the whole morning. When I walk in, I want every bride to feel like she can exhale.
+        </p>
+        <p class="about-body">
+          Mid-market pricing. Luxury attention. I care more than most — and it shows in every photo from that morning.
+        </p>
+        <a href="/about" class="btn">Meet Cydney &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ─────────────────────────────────────── -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner fade-up">
+        <p class="section-eyebrow light">Ready when you are</p>
+        <h2>Your date might still be available.</h2>
+        <p class="final-cta-sub">Spots fill fast — especially May through October.<br>Let's find out if yours is open.</p>
+        <a href="/book" class="btn btn-light">Let's talk about your day &rarr;</a>
+        <p class="final-avail">
+          <span class="avail-dot" aria-hidden="true"></span>
+          Limited 2025 dates remaining
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Blushed Brides</p>
+        <p class="footer-tagline">Bridal Hair &amp; Makeup — Northern California</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/about">About</a>
+        <a href="/faq">FAQ</a>
+        <a href="/blog">Blog</a>
+        <a href="/book" class="footer-book">Book Now</a>
+      </nav>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style is:global>
+
+  /* ─── Header ─────────────────────────────────────────── */
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding-block: 1.25rem;
+    background-color: rgba(250, 248, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--blush-light);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl); font-weight: 700;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-body); font-size: var(--text-sm);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--blush); }
+  .nav-links .btn { font-size: var(--text-xs); padding: 0.6rem 1.4rem; color: #fff; }
+  .nav-links .btn:hover { color: #fff; }
+
+  /* ─── Hero ───────────────────────────────────────────── */
+  .hero {
+    min-height: 100svh; padding-top: 6rem;
+    display: flex; flex-direction: column;
+    background-color: var(--off-white);
+  }
+  .hero-inner {
+    flex: 1; display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center; padding-block: 4rem;
+  }
+  .hero-content { display: flex; flex-direction: column; gap: 1.5rem; }
+  .hero-eyebrow {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blush);
+  }
+  .hero-headline {
+    font-family: var(--font-heading);
+    font-size: var(--text-hero); font-weight: 700;
+    line-height: 1.05; letter-spacing: -0.03em;
+    color: var(--ink); display: flex; flex-direction: column;
+  }
+  .hero-sub {
+    font-family: var(--font-body); font-size: var(--text-lg);
+    font-weight: 300; line-height: 1.6; color: #555; max-width: 38ch;
+  }
+  .hero-cta { margin-top: 0.5rem; }
+  .hero-image { position: relative; height: 70vh; min-height: 500px; }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+  .hero-image-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, var(--blush-light) 0%, var(--blush) 100%);
+    opacity: 0.35;
+  }
+  .hero-scroll-hint {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.5rem; padding-bottom: 2rem;
+    opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
+  }
+  .hero-scroll-hint span {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--blush);
+  }
+  .scroll-line {
+    width: 1px; height: 3rem; background-color: var(--blush);
+    transform-origin: top; animation: scrollLine 1.5s ease 1.5s infinite;
+  }
+
+  /* ─── Availability note ──────────────────────────────── */
+  .availability-note {
+    display: flex; align-items: center; gap: 0.5rem; margin-top: 0.875rem;
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.06em; color: #888;
+  }
+  .avail-dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; background-color: var(--blush);
+    flex-shrink: 0; animation: pulse 2.5s ease infinite;
+  }
+
+  /* ─── Ticker ─────────────────────────────────────────── */
+  .ticker {
+    width: 100%; overflow: hidden;
+    background-color: var(--blush-dark); padding-block: 0.75rem;
+  }
+  .ticker-track {
+    display: flex; align-items: center; gap: 1.5rem;
+    width: max-content; animation: ticker 28s linear infinite;
+  }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  .ticker-item {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--blush-light); white-space: nowrap;
+  }
+  .ticker-sep { color: var(--blush); font-size: 0.5rem; flex-shrink: 0; }
+
+  /* ─── Shared section ─────────────────────────────────── */
+  .section-eyebrow {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blush); margin-bottom: 0.75rem;
+  }
+  .section-eyebrow.light { color: var(--blush-light); }
+
+  /* ─── Services Lookbook ──────────────────────────────── */
+  .lookbook { padding-block: var(--space-xl); background-color: var(--off-white); }
+
+  .lookbook-header { margin-bottom: 3rem; }
+  .lookbook-header h2 {
+    font-family: var(--font-heading); font-size: var(--text-5xl);
+    font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: var(--ink);
+  }
+
+  .lookbook-inner {
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    min-height: 70vh;
+  }
+
+  .lookbook-list {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: var(--space-lg) var(--gutter);
+    border-right: 1px solid var(--blush-light);
+    gap: 0;
+  }
+
+  .lookbook-item {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--blush-light);
+    background: none; border-top: none; border-left: none; border-right: none;
+    cursor: pointer; text-align: left;
+    transition: padding-left 0.3s ease;
+  }
+
+  .lookbook-item:first-child { border-top: 1px solid var(--blush-light); }
+
+  .lookbook-item:hover,
+  .lookbook-item.active { padding-left: 1rem; }
+
+  .lookbook-num {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.15em; color: var(--blush);
+    font-weight: 500; min-width: 2rem;
+    transition: color 0.3s ease;
+  }
+
+  .lookbook-name {
+    font-family: var(--font-heading); font-size: var(--text-3xl);
+    font-weight: 700; color: #ccc; line-height: 1;
+    transition: color 0.3s ease; flex: 1;
+  }
+
+  .lookbook-item.active .lookbook-name,
+  .lookbook-item:hover .lookbook-name { color: var(--ink); }
+
+  .lookbook-arrow {
+    font-size: var(--text-lg); color: transparent;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .lookbook-item.active .lookbook-arrow,
+  .lookbook-item:hover .lookbook-arrow {
+    color: var(--blush); transform: translateX(4px);
+  }
+
+  .lookbook-all {
+    display: inline-block; margin-top: 2rem;
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--blush); text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .lookbook-all:hover { opacity: 0.7; }
+
+  .lookbook-stage {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+  }
+
+  .lookbook-panel {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+  .lookbook-panel.active { opacity: 1; pointer-events: auto; }
+
+  .lookbook-img-placeholder {
+    width: 100%; height: 70vh;
+    background: linear-gradient(160deg, var(--ph-from), var(--ph-to));
+  }
+
+  .lookbook-img-placeholder img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+
+  .lookbook-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 3rem 2.5rem;
+    background: linear-gradient(to top, rgba(26,26,26,0.85) 0%, transparent 100%);
+    color: #fff;
+  }
+  .lookbook-caption h3 {
+    font-family: var(--font-heading); font-size: var(--text-2xl);
+    font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .lookbook-caption p {
+    font-family: var(--font-body); font-size: var(--text-sm);
+    font-weight: 300; line-height: 1.6; opacity: 0.85; margin-bottom: 1rem;
+  }
+  .service-link {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--blush-light); text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .service-link:hover { color: #fff; }
+
+  /* ─── The Morning Of ─────────────────────────────────── */
+  .morning-of { height: 500vh; }
+
+  .morning-sticky {
+    position: sticky; top: 0;
+    height: 100vh; overflow: hidden;
+  }
+
+  .morning-images { position: absolute; inset: 0; }
+
+  .morning-img {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, var(--ph-from), var(--ph-to));
+    opacity: 0; transition: opacity 1s ease;
+  }
+  .morning-img.active { opacity: 1; }
+
+  .morning-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(26,26,26,0.2) 0%,
+      rgba(26,26,26,0.5) 50%,
+      rgba(26,26,26,0.75) 100%
+    );
+  }
+
+  .morning-content {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-inline: var(--gutter);
+  }
+
+  .moment {
+    position: absolute;
+    opacity: 0; transform: translateY(1.5rem);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    pointer-events: none;
+  }
+  .moment.active {
+    opacity: 1; transform: translateY(0);
+    pointer-events: auto; position: relative;
+  }
+
+  .moment-time {
+    display: block;
+    font-family: var(--font-body); font-size: var(--text-sm);
+    font-weight: 500; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--blush-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .moment-text {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.02em; color: #fff;
+  }
+
+  .moment-text em {
+    font-style: italic; color: var(--blush-light);
+  }
+
+  /* Progress bar */
+  .morning-progress-bar {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 3;
+    height: 2px; background-color: rgba(255,255,255,0.15);
+  }
+  .morning-progress-fill {
+    height: 100%; width: 0%;
+    background-color: var(--blush);
+    transition: width 0.1s linear;
+  }
+
+  /* Dot nav */
+  .morning-dots {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    z-index: 3; display: flex; gap: 0.75rem;
+  }
+  .morning-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background-color: rgba(255,255,255,0.35);
+    border: none; cursor: pointer; padding: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .morning-dot.active {
+    background-color: var(--blush); transform: scale(1.4);
+  }
+
+  /* ─── Gallery Preview ────────────────────────────────── */
+  .gallery-preview { padding-block: var(--space-xl); background-color: #F5F0ED; }
+
+  .gallery-header {
+    display: flex; align-items: flex-end;
+    justify-content: space-between; margin-bottom: 2.5rem; gap: 2rem;
+  }
+  .gallery-headline {
+    font-family: var(--font-heading); font-size: var(--text-4xl);
+    font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink);
+  }
+  .gallery-headline em { font-style: italic; color: var(--blush); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem; height: 580px;
+  }
+
+  .gallery-cell {
+    background: linear-gradient(160deg, var(--ph-from), var(--ph-to));
+    overflow: hidden; position: relative;
+  }
+  .gallery-cell img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-cell.large { grid-row: 1 / 3; }
+  .gallery-cell.wide  { grid-column: 2 / 4; }
+
+  /* ─── About Teaser ───────────────────────────────────── */
+  .about-teaser { padding-block: var(--space-xl); background-color: var(--off-white); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1.15fr;
+    gap: 5rem; align-items: center;
+  }
+  .about-placeholder {
+    width: 100%; aspect-ratio: 3 / 4;
+    background: linear-gradient(160deg, var(--blush-light), var(--blush-dark));
+  }
+  .about-content { display: flex; flex-direction: column; gap: 1.25rem; }
+  .about-content h2 {
+    font-family: var(--font-heading); font-size: var(--text-3xl);
+    font-weight: 700; line-height: 1.2; color: var(--ink);
+  }
+  .about-body {
+    font-family: var(--font-body); font-size: var(--text-base);
+    font-weight: 300; color: #555; line-height: 1.75;
+  }
+
+  /* ─── Final CTA ──────────────────────────────────────── */
+  .final-cta { padding-block: var(--space-xl); background-color: var(--blush-dark); }
+  .final-cta-inner {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center; gap: 1.25rem;
+  }
+  .final-cta-inner h2 {
+    font-family: var(--font-heading); font-size: var(--text-4xl);
+    font-weight: 700; color: #fff; line-height: 1.1;
+  }
+  .final-cta-sub {
+    font-family: var(--font-body); font-size: var(--text-base);
+    font-weight: 300; color: var(--blush-light); max-width: 44ch; line-height: 1.6;
+  }
+  .btn-light { background-color: #fff; color: var(--blush-dark); }
+  .btn-light:hover { background-color: var(--blush-light); color: var(--blush-dark); transform: translateY(-1px); }
+  .final-avail {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.06em; color: var(--blush-light); opacity: 0.8;
+  }
+
+  /* ─── Footer ─────────────────────────────────────────── */
+  .site-footer { background-color: var(--ink); padding-block: var(--space-lg); }
+  .footer-inner {
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center; gap: 2rem;
+  }
+  .footer-logo {
+    font-family: var(--font-heading); font-size: var(--text-xl);
+    font-weight: 700; color: #fff; margin-bottom: 0.25rem;
+  }
+  .footer-tagline {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.1em; text-transform: uppercase; color: #555;
+  }
+  .footer-nav { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+  .footer-nav a {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #888; text-decoration: none; transition: color 0.2s ease;
+  }
+  .footer-nav a:hover { color: var(--blush); }
+  .footer-book { color: var(--blush) !important; }
+  .footer-copy { font-family: var(--font-body); font-size: var(--text-xs); color: #555; text-align: right; }
+
+  /* ─── Keyframes ──────────────────────────────────────── */
+  @keyframes fadeIn  { to { opacity: 1; } }
+  @keyframes pulse   { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(.75); } }
+  @keyframes ticker  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes scrollLine {
+    0%   { transform: scaleY(0); opacity: 1; }
+    50%  { transform: scaleY(1); opacity: 1; }
+    100% { transform: scaleY(1); opacity: 0; }
+  }
+
+  /* ─── Responsive ─────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-block: 2rem; }
+    .hero-image { height: 50vw; min-height: 280px; order: -1; }
+    .nav-links li:not(:last-child) { display: none; }
+    .lookbook-inner { grid-template-columns: 1fr; }
+    .lookbook-list { border-right: none; border-bottom: 1px solid var(--blush-light); padding: var(--space-md) var(--gutter); }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: auto; }
+    .gallery-cell.large { grid-row: auto; height: 300px; grid-column: 1 / 3; }
+    .gallery-cell.wide { grid-column: 1 / 3; height: 200px; }
+    .gallery-cell { height: 200px; }
+    .gallery-header { flex-direction: column; align-items: flex-start; }
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-placeholder { aspect-ratio: 16/9; }
+    .footer-inner { grid-template-columns: 1fr; text-align: center; }
+    .footer-copy { text-align: center; }
+  }
+
+</style>
+
+<script is:inline>
+  // ─── Fade-up on scroll ─────────────────────────────────
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) { el.target.classList.add('visible'); fadeObserver.unobserve(el.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+  // ─── Lookbook service selector ─────────────────────────
+  const lookbookItems = document.querySelectorAll('.lookbook-item');
+  const lookbookPanels = document.querySelectorAll('.lookbook-panel');
+
+  lookbookItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const target = item.dataset.service;
+      lookbookItems.forEach(i => i.classList.remove('active'));
+      lookbookPanels.forEach(p => p.classList.remove('active'));
+      item.classList.add('active');
+      document.querySelector(`.lookbook-panel[data-service="${target}"]`).classList.add('active');
+    });
+  });
+
+  // ─── Morning Of scrollytelling ─────────────────────────
+  const morningSection   = document.querySelector('.morning-of');
+  const morningMoments   = document.querySelectorAll('.moment');
+  const morningImages    = document.querySelectorAll('.morning-img');
+  const morningDots      = document.querySelectorAll('.morning-dot');
+  const progressFill     = document.querySelector('.morning-progress-fill');
+  const MOMENT_COUNT     = morningMoments.length;
+
+  function setMoment(index) {
+    morningMoments.forEach((m, i) => m.classList.toggle('active', i === index));
+    morningImages.forEach((img, i) => img.classList.toggle('active', i === index));
+    morningDots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  // Dot nav — jump to moment on click
+  morningDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.moment);
+      const sectionTop = morningSection.getBoundingClientRect().top + window.scrollY;
+      const sectionHeight = morningSection.offsetHeight - window.innerHeight;
+      const targetScroll = sectionTop + (idx / MOMENT_COUNT) * sectionHeight;
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    if (!morningSection) return;
+    const rect = morningSection.getBoundingClientRect();
+    const sectionHeight = morningSection.offsetHeight - window.innerHeight;
+    const scrolled = -rect.top;
+    const progress = Math.max(0, Math.min(1, scrolled / sectionHeight));
+
+    if (progressFill) progressFill.style.width = `${progress * 100}%`;
+
+    const rawIndex = progress * MOMENT_COUNT;
+    const index = Math.min(Math.floor(rawIndex), MOMENT_COUNT - 1);
+    setMoment(index);
+  }, { passive: true });
+</script>
