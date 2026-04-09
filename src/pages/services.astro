@@ -1,0 +1,746 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Services & Pricing — Blushed Brides"
+  description="Bridal hair, bridal makeup, and full bridal party services for Northern California weddings. See what's included and get pricing."
+  canonicalUrl="https://blushedbrides.com/services"
+>
+
+  <!-- ─── Nav ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Blushed Brides home">Blushed Brides</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/services" aria-current="page">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/book" class="btn">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── Page Hero ────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <p class="hero-eyebrow reveal-text">Bridal Hair &amp; Makeup — Northern California</p>
+      <h1 class="page-hero-heading">
+        <span class="reveal-text">Services</span>
+        <span class="reveal-text-delay">&amp; Pricing</span>
+      </h1>
+      <p class="page-hero-sub reveal-text-delay-2">
+        Everything you need for the morning of — from a solo bridal look to a full party.
+      </p>
+      <nav class="services-jump-nav reveal-text-delay-2" aria-label="Jump to service">
+        <a href="#hair">Bridal Hair</a>
+        <span aria-hidden="true">✦</span>
+        <a href="#makeup">Bridal Makeup</a>
+        <span aria-hidden="true">✦</span>
+        <a href="#party">Bridal Party</a>
+      </nav>
+    </div>
+    <div class="page-hero-img" aria-hidden="true">
+      <!-- Drop photo at: public/images/services-hero.jpg -->
+    </div>
+  </section>
+
+  <!-- ─── Ticker ───────────────────────────────────────── -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">Bridal Hair &amp; Makeup</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Northern California</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Trial Appointments Available</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Booking 2025 &amp; 2026</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Airbrush Foundation</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Bridal Parties Welcome</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">On-Location Available</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Bridal Hair &amp; Makeup</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Northern California</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Trial Appointments Available</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Booking 2025 &amp; 2026</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Airbrush Foundation</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">Bridal Parties Welcome</span><span class="ticker-sep">✦</span>
+      <span class="ticker-item">On-Location Available</span><span class="ticker-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ─── Service 01: Bridal Hair ──────────────────────── -->
+  <section id="hair" class="service-section">
+    <div class="service-grid">
+
+      <div class="service-img-wrap">
+        <!-- Drop photo at: public/images/service-hair-detail.jpg -->
+        <div class="service-img-ph" style="--ph-from: #F0D4DC; --ph-to: #C97B8F;" aria-hidden="true"></div>
+      </div>
+
+      <div class="service-content fade-up">
+        <span class="service-num">01</span>
+        <h2 class="service-heading">Bridal<br>Hair</h2>
+        <p class="service-desc">
+          Updos, soft waves, braids, half-up — every style is built to last from first look to the final song. Cydney works with your natural texture and your vision, not against either.
+        </p>
+
+        <ul class="service-includes">
+          <li>Detailed style planning &amp; consultation</li>
+          <li>Day-of styling (up to 90 minutes)</li>
+          <li>Veil &amp; accessory placement</li>
+          <li>Humidity-resistant finishing products</li>
+          <li>Touch-up kit + extra pins to keep</li>
+          <li>Trial session available (separate booking)</li>
+        </ul>
+
+        <div class="service-pricing">
+          <div class="pricing-row">
+            <span class="pricing-label">Bridal Hair</span>
+            <!-- Update price below when ready -->
+            <span class="pricing-value">Starting at $___</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Bridal Hair Trial</span>
+            <span class="pricing-value">$___</span>
+          </div>
+        </div>
+
+        <a href="/book" class="btn">Reserve your date &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Service 02: Bridal Makeup ────────────────────── -->
+  <section id="makeup" class="service-section service-section--alt">
+    <div class="service-grid service-grid--reverse">
+
+      <div class="service-content fade-up">
+        <span class="service-num">02</span>
+        <h2 class="service-heading">Bridal<br>Makeup</h2>
+        <p class="service-desc">
+          Flawless and camera-ready, but still unmistakably you. Airbrush foundation available for a truly seamless, all-day finish that photographs beautifully under any light.
+        </p>
+
+        <ul class="service-includes">
+          <li>Skin prep + primer</li>
+          <li>Custom airbrush or traditional application</li>
+          <li>Long-wear, photography-ready formulas</li>
+          <li>False lashes (included)</li>
+          <li>Lip color touch-up kit to keep</li>
+          <li>Trial session available (separate booking)</li>
+        </ul>
+
+        <div class="service-pricing">
+          <div class="pricing-row">
+            <span class="pricing-label">Bridal Makeup</span>
+            <span class="pricing-value">Starting at $___</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Bridal Makeup Trial</span>
+            <span class="pricing-value">$___</span>
+          </div>
+          <div class="pricing-row pricing-row--featured">
+            <span class="pricing-label">Hair + Makeup Bundle</span>
+            <span class="pricing-value">Starting at $___</span>
+          </div>
+        </div>
+
+        <a href="/book" class="btn">Reserve your date &rarr;</a>
+      </div>
+
+      <div class="service-img-wrap">
+        <!-- Drop photo at: public/images/service-makeup-detail.jpg -->
+        <div class="service-img-ph" style="--ph-from: #d4a0af; --ph-to: #8B4A5C;" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── Service 03: Bridal Party ─────────────────────── -->
+  <section id="party" class="service-section">
+    <div class="service-grid">
+
+      <div class="service-img-wrap">
+        <!-- Drop photo at: public/images/service-party-detail.jpg -->
+        <div class="service-img-ph" style="--ph-from: #e8c4ce; --ph-to: #a05870;" aria-hidden="true"></div>
+      </div>
+
+      <div class="service-content fade-up">
+        <span class="service-num">03</span>
+        <h2 class="service-heading">Bridal<br>Party</h2>
+        <p class="service-desc">
+          The whole morning, coordinated. Cydney handles scheduling so everyone is camera-ready before you walk down the aisle — no stress, no rushing, no one left behind.
+        </p>
+
+        <ul class="service-includes">
+          <li>Bridesmaids hair &amp; makeup</li>
+          <li>Mother of the Bride / Groom services</li>
+          <li>Flower girl styling</li>
+          <li>Coordinated call time scheduling</li>
+          <li>Consistent look across the whole party</li>
+          <li>Minimum booking may apply</li>
+        </ul>
+
+        <div class="service-pricing">
+          <div class="pricing-row">
+            <span class="pricing-label">Bridesmaid Hair</span>
+            <span class="pricing-value">Starting at $___</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">Bridesmaid Makeup</span>
+            <span class="pricing-value">Starting at $___</span>
+          </div>
+          <div class="pricing-row">
+            <span class="pricing-label">MOB / MOG</span>
+            <span class="pricing-value">Starting at $___</span>
+          </div>
+        </div>
+
+        <a href="/book" class="btn">Get a party quote &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── How Booking Works ─────────────────────────────── -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="hiw-header fade-up">
+        <p class="section-eyebrow">The Process</p>
+        <h2>Simple from start<br>to <em>I do.</em></h2>
+      </div>
+      <div class="hiw-steps fade-up">
+        <div class="hiw-step">
+          <span class="hiw-num">01</span>
+          <h3>Reach out</h3>
+          <p>Fill out the inquiry form with your date, location, and party size. Cydney will follow up within 48 hours.</p>
+        </div>
+        <div class="hiw-divider" aria-hidden="true"></div>
+        <div class="hiw-step">
+          <span class="hiw-num">02</span>
+          <h3>Book a trial</h3>
+          <p>Meet in person, test your look, and lock in every detail — so the morning of is calm and perfect.</p>
+        </div>
+        <div class="hiw-divider" aria-hidden="true"></div>
+        <div class="hiw-step">
+          <span class="hiw-num">03</span>
+          <h3>Wedding day</h3>
+          <p>Cydney arrives on time, ready to work. You get to focus on getting married.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ Callout ───────────────────────────────────── -->
+  <section class="faq-callout">
+    <div class="container faq-callout-inner fade-up">
+      <div class="faq-callout-text">
+        <p class="section-eyebrow">Questions?</p>
+        <h2>The most common things brides ask before booking.</h2>
+        <p class="faq-callout-sub">
+          Do you travel to venues? How far in advance should I book? What happens if I need to reschedule? All answered.
+        </p>
+        <a href="/faq" class="btn btn-outline">Read the FAQ &rarr;</a>
+      </div>
+      <div class="faq-callout-visual" aria-hidden="true">
+        <!-- decorative -->
+        <div class="faq-deco-circle"></div>
+        <div class="faq-deco-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Final CTA ─────────────────────────────────────── -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner fade-up">
+        <p class="section-eyebrow light">Ready when you are</p>
+        <h2>Your date might still be available.</h2>
+        <p class="final-cta-sub">Spots fill fast — especially May through October.<br>Let's find out if yours is open.</p>
+        <a href="/book" class="btn btn-light">Let's talk about your day &rarr;</a>
+        <p class="final-avail">
+          <span class="avail-dot" aria-hidden="true"></span>
+          Limited 2025 dates remaining
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Blushed Brides</p>
+        <p class="footer-tagline">Bridal Hair &amp; Makeup — Northern California</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/about">About</a>
+        <a href="/faq">FAQ</a>
+        <a href="/blog">Blog</a>
+        <a href="/book" class="footer-book">Book Now</a>
+      </nav>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style is:global>
+
+  /* ─── Header ─────────────────────────────────────────── */
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding-block: 1.25rem;
+    background-color: rgba(250, 248, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--blush-light);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; }
+  .logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl); font-weight: 700;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-body); font-size: var(--text-sm);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a[aria-current="page"] { color: var(--blush); }
+  .nav-links .btn { font-size: var(--text-xs); padding: 0.6rem 1.4rem; color: #fff; }
+  .nav-links .btn:hover { color: #fff; }
+
+  /* ─── Page Hero ──────────────────────────────────────── */
+  .page-hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    background-color: var(--off-white);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 55vh;
+    align-items: center;
+  }
+  .page-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    grid-column: 1;
+  }
+  .page-hero-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+  }
+  .page-hero-sub {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #666;
+    max-width: 40ch;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blush);
+  }
+  .services-jump-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .services-jump-nav a {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blush);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .services-jump-nav a:hover { opacity: 0.65; }
+  .services-jump-nav span { color: var(--blush-light); font-size: 0.5rem; }
+
+  .page-hero-img {
+    grid-column: 2;
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 48%;
+    background: linear-gradient(160deg, var(--blush-light) 0%, var(--blush) 100%);
+    opacity: 0.3;
+  }
+
+  /* ─── Ticker ─────────────────────────────────────────── */
+  .ticker {
+    width: 100%; overflow: hidden;
+    background-color: var(--blush-dark); padding-block: 0.75rem;
+  }
+  .ticker-track {
+    display: flex; align-items: center; gap: 1.5rem;
+    width: max-content; animation: ticker 28s linear infinite;
+  }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  .ticker-item {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--blush-light); white-space: nowrap;
+  }
+  .ticker-sep { color: var(--blush); font-size: 0.5rem; flex-shrink: 0; }
+
+  /* ─── Service Sections ───────────────────────────────── */
+  .service-section {
+    background-color: var(--off-white);
+    border-top: 1px solid var(--blush-light);
+  }
+  .service-section--alt { background-color: #F5F0ED; }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+  }
+  .service-grid--reverse {
+    direction: rtl;
+  }
+  .service-grid--reverse > * {
+    direction: ltr;
+  }
+
+  .service-img-wrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  .service-img-ph {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, var(--ph-from), var(--ph-to));
+    transition: transform 0.6s ease;
+  }
+  .service-img-wrap:hover .service-img-ph {
+    transform: scale(1.02);
+  }
+  .service-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .service-img-wrap:hover img {
+    transform: scale(1.02);
+  }
+
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .service-num {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blush);
+  }
+
+  .service-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+
+  .service-desc {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 300;
+    line-height: 1.75;
+    color: #555;
+    max-width: 40ch;
+  }
+
+  .service-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border-top: 1px solid var(--blush-light);
+    padding-top: 1.25rem;
+  }
+  .service-includes li {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 300;
+    color: #444;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .service-includes li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.5em;
+    width: 4px; height: 1px;
+    background-color: var(--blush);
+  }
+
+  .service-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid var(--blush-light);
+    padding-top: 1.25rem;
+  }
+  .pricing-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .pricing-label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 300;
+    color: #555;
+  }
+  .pricing-value {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .pricing-row--featured .pricing-label,
+  .pricing-row--featured .pricing-value { color: var(--blush-dark); }
+  .pricing-row--featured {
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--blush-light);
+  }
+
+  /* ─── Shared section eyebrow ─────────────────────────── */
+  .section-eyebrow {
+    font-family: var(--font-body); font-size: var(--text-xs);
+    font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blush); margin-bottom: 0.75rem;
+  }
+  .section-eyebrow.light { color: var(--blush-light); }
+
+  /* ─── How It Works ───────────────────────────────────── */
+  .how-it-works {
+    padding-block: var(--space-xl);
+    background-color: var(--ink);
+  }
+  .hiw-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .hiw-header h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .hiw-header h2 em {
+    font-style: italic;
+    color: var(--blush-light);
+  }
+  .hiw-header .section-eyebrow { color: var(--blush); }
+
+  .hiw-steps {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: start;
+    gap: 0;
+  }
+  .hiw-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-inline: 2rem;
+    text-align: center;
+  }
+  .hiw-num {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blush);
+    margin-bottom: 0.25rem;
+  }
+  .hiw-step h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .hiw-step p {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 300;
+    color: #888;
+    line-height: 1.7;
+    max-width: 28ch;
+    margin-inline: auto;
+  }
+  .hiw-divider {
+    width: 1px;
+    height: 4rem;
+    background-color: #333;
+    margin-top: 2.5rem;
+    align-self: start;
+  }
+
+  /* ─── FAQ Callout ────────────────────────────────────── */
+  .faq-callout {
+    padding-block: var(--space-xl);
+    background-color: var(--blush-light);
+    overflow: hidden;
+  }
+  .faq-callout-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 4rem;
+  }
+  .faq-callout-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 52ch;
+  }
+  .faq-callout-text h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--blush-dark);
+  }
+  .faq-callout-sub {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 300;
+    color: #7a4555;
+    line-height: 1.65;
+  }
+  .faq-callout .section-eyebrow { color: var(--blush-dark); }
+  .faq-callout .btn-outline {
+    border-color: var(--blush-dark);
+    color: var(--blush-dark);
+    align-self: flex-start;
+  }
+  .faq-callout .btn-outline:hover {
+    background-color: var(--blush-dark);
+    color: #fff;
+  }
+  .faq-callout-visual {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+  }
+  .faq-deco-circle {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid var(--blush);
+    opacity: 0.4;
+  }
+  .faq-deco-line {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 100px; height: 1px;
+    background-color: var(--blush);
+    opacity: 0.35;
+    transform: rotate(45deg);
+  }
+
+  /* ─── Final CTA ──────────────────────────────────────── */
+  .final-cta { padding-block: var(--space-xl); background-color: var(--blush-dark); }
+  .final-cta-inner {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center; gap: 1.25rem;
+  }
+  .final-cta-inner h2 {
+    font-family: var(--font-heading); font-size: var(--text-4xl);
+    font-weight: 700; color: #fff; line-height: 1.1;
+  }
+  .final-cta-sub {
+    font-family: var(--font-body); font-size: var(--text-base);
+    font-weight: 300; color: var(--blush-light); max-width: 44ch; line-height: 1.6;
+  }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; background-color: var(--blush); color: #fff; font-family: var(--font-body); font-weight: 500; font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 0.875rem 2rem; border: none; cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }
+  .btn:hover { background-color: var(--blush-dark); transform: translateY(-1px); }
+  .btn-outline { background-color: transparent; border: 1px solid var(--blush); color: var(--blush); }
+  .btn-outline:hover { background-color: var(--blush); color: #fff; }
+  .btn-light { background-color: #fff; color: var(--blush-dark); }
+  .btn-light:hover { background-color: var(--blush-light); color: var(--blush-dark); transform: translateY(-1px); }
+  .final-avail { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: 0.06em; color: var(--blush-light); opacity: 0.8; }
+  .avail-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: var(--blush-light); flex-shrink: 0; animation: pulse 2.5s ease infinite; }
+
+  /* ─── Footer ─────────────────────────────────────────── */
+  .site-footer { background-color: var(--ink); padding-block: var(--space-lg); }
+  .footer-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
+  .footer-logo { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+  .footer-tagline { font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; color: #555; }
+  .footer-nav { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+  .footer-nav a { font-family: var(--font-body); font-size: var(--text-xs); letter-spacing: 0.08em; text-transform: uppercase; color: #888; text-decoration: none; transition: color 0.2s ease; }
+  .footer-nav a:hover { color: var(--blush); }
+  .footer-book { color: var(--blush) !important; }
+  .footer-copy { font-family: var(--font-body); font-size: var(--text-xs); color: #555; text-align: right; }
+
+  /* ─── Keyframes ──────────────────────────────────────── */
+  @keyframes pulse   { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.4; transform:scale(.75); } }
+  @keyframes ticker  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ─── Responsive ─────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .page-hero { grid-template-columns: 1fr; padding-top: 7rem; padding-bottom: 3rem; }
+    .page-hero-inner { grid-column: 1; }
+    .page-hero-img { display: none; }
+    .nav-links li:not(:last-child) { display: none; }
+    .service-grid { grid-template-columns: 1fr; min-height: auto; }
+    .service-grid--reverse { direction: ltr; }
+    .service-img-wrap { min-height: 320px; }
+    .service-content { padding: var(--space-lg) var(--gutter); }
+    .hiw-steps { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hiw-divider { display: none; }
+    .faq-callout-inner { grid-template-columns: 1fr; }
+    .faq-callout-visual { display: none; }
+    .footer-inner { grid-template-columns: 1fr; text-align: center; }
+    .footer-copy { text-align: center; }
+  }
+
+</style>
+
+<script is:inline>
+  // ─── Scroll fade-up ────────────────────────────────────
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) { el.target.classList.add('visible'); fadeObserver.unobserve(el.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+</script>
