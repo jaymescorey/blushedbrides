@@ -82,9 +82,9 @@ img {
 /* ─── Typography ───────────────────────────────────────── */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
 /* ─── Utility: Container ───────────────────────────────── */
