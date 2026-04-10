@@ -159,3 +159,38 @@ h1, h2, h3, h4 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ─── Standards Section ───────────────────────────────────── */
+.standards {
+  padding: var(--space-lg) var(--gutter);
+  background-color: var(--off-white);
+}
+
+.standards-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.standards-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.standards-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.standards-feature .feature-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.standards-feature .feature-text {
+  margin-top: var(--space-sm);
+}
