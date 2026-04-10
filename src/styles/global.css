@@ -3,15 +3,17 @@
 /* ─── Brand Tokens ─────────────────────────────────────── */
 :root {
   /* Colors */
-  --blush:        #C97B8F;
-  --blush-light:  #F0D4DC;
-  --blush-dark:   #8B4A5C;
-  --ink:          #1A1A1A;
-  --off-white:    #FAF8F6;
+  --blush:        #D4899A;
+  --blush-light:  #F0DCE4;
+  --blush-dark:   #9B4A65;
+  --cream:        #EDE8DC;
+  --taupe:        #9E9088;
+  --ink:          #261820;
+  --off-white:    #FAF6F2;
 
   /* Typography */
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Lora', Georgia, serif;
 
   /* Type scale */
   --text-xs:   0.75rem;
@@ -160,37 +162,3 @@ h1, h2, h3, h4 {
   transform: translateY(0);
 }
 
-/* ─── Standards Section ───────────────────────────────────── */
-.standards {
-  padding: var(--space-lg) var(--gutter);
-  background-color: var(--off-white);
-}
-
-.standards-header {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-}
-
-.standards-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-}
-
-.standards-feature {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.standards-feature .feature-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.standards-feature .feature-text {
-  margin-top: var(--space-sm);
-}
