@@ -39,6 +39,26 @@
   /* Layout */
   --max-width: 1200px;
   --gutter:    clamp(1.5rem, 5vw, 4rem);
+
+  /* Motion — editorial, not bouncy */
+  --ease-out-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /*
+   * Fine dot grids (CSS-only — no image asset).
+   * Light surfaces: warm ink dots. Dark surfaces: soft highlight dots.
+   */
+  --texture-dots-light:
+    radial-gradient(circle at 1px 1px, rgba(38, 24, 32, 0.055) 1px, transparent 0);
+  --texture-dots-light-size: 16px 16px;
+
+  --texture-dots-dark:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.042) 1px, transparent 0);
+  --texture-dots-dark-size: 18px 18px;
+
+  /* Finer “pixel” mesh for large empty fields */
+  --texture-pixel-fine:
+    radial-gradient(circle at 0.5px 0.5px, rgba(155, 74, 101, 0.07) 0.45px, transparent 0.5px);
+  --texture-pixel-fine-size: 8px 8px;
 }
 
 /* ─── Base Reset ───────────────────────────────────────── */
@@ -153,12 +173,91 @@ h1, h2, h3, h4 {
 /* ─── Scroll fade-up ───────────────────────────────────── */
 .fade-up {
   opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(1.75rem);
+  transition:
+    opacity 0.85s var(--ease-out-luxe),
+    transform 0.85s var(--ease-out-luxe);
 }
 
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ─── Staggered “fall into place” (parent observed, children resolve) ─ */
+.reveal-block .reveal-child {
+  opacity: 0;
+  transform: translateY(1.65rem);
+  transition:
+    opacity 0.75s var(--ease-out-luxe),
+    transform 0.75s var(--ease-out-luxe);
+}
+
+.reveal-block.visible .reveal-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-block.visible .reveal-child:nth-child(1) { transition-delay: 0.06s; }
+.reveal-block.visible .reveal-child:nth-child(2) { transition-delay: 0.13s; }
+.reveal-block.visible .reveal-child:nth-child(3) { transition-delay: 0.2s; }
+.reveal-block.visible .reveal-child:nth-child(4) { transition-delay: 0.27s; }
+.reveal-block.visible .reveal-child:nth-child(5) { transition-delay: 0.34s; }
+.reveal-block.visible .reveal-child:nth-child(6) { transition-delay: 0.41s; }
+.reveal-block.visible .reveal-child:nth-child(7) { transition-delay: 0.48s; }
+.reveal-block.visible .reveal-child:nth-child(8) { transition-delay: 0.55s; }
+
+/* Interactive elements shouldn’t catch clicks while invisible */
+.reveal-block:not(.visible) :is(a, button) {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-text,
+  .reveal-text-delay,
+  .reveal-text-delay-2 {
+    animation: none !important;
+    clip-path: none !important;
+  }
+
+  .fade-up,
+  .fade-up.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .reveal-block .reveal-child,
+  .reveal-block.visible .reveal-child {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+
+  .reveal-block:not(.visible) :is(a, button) {
+    pointer-events: auto !important;
+  }
+}
+
+/* ─── Fixed header — depth after scroll (shared across pages) ─ */
+.site-header {
+  transition:
+    background-color 0.4s var(--ease-out-luxe),
+    box-shadow 0.45s var(--ease-out-luxe),
+    border-color 0.35s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.site-header--scrolled {
+  background-color: rgba(250, 246, 242, 0.94) !important;
+  border-bottom-color: rgba(201, 123, 143, 0.12);
+  box-shadow:
+    0 1px 0 rgba(38, 24, 32, 0.05),
+    0 22px 48px -28px rgba(38, 24, 32, 0.14);
 }
 

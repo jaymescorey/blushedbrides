@@ -70,18 +70,30 @@ const {
 <body>
   <slot />
 
-  <!-- Scroll fade-up observer -->
+  <!-- Scroll reveals: single fade-up + staggered reveal-block -->
   <script is:inline>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('visible');
-          observer.unobserve(el.target);
-        }
-      });
-    }, { threshold: 0.15 });
+    const scrollReveal = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            scrollReveal.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
 
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-up, .reveal-block').forEach((el) => scrollReveal.observe(el));
+
+    const header = document.querySelector('.site-header');
+    if (header) {
+      const syncHeader = () => {
+        header.classList.toggle('site-header--scrolled', window.scrollY > 28);
+      };
+      syncHeader();
+      window.addEventListener('scroll', syncHeader, { passive: true });
+    }
   </script>
 </body>
 </html>
