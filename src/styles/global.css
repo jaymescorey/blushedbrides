@@ -11,8 +11,23 @@
   --ink:          #261820;
   --off-white:    #FAF6F2;
 
+  /* Extended palette — used by hero */
+  --wine:       #3a1520;
+  --wine-deep:  #25101a;
+  --oxblood:    #6b1a1a;
+  --gold:       #c9a14a;
+  --gold-soft:  #e8d5a8;
+  --smoke:      #8a7f72;
+  --hairline:   #d9cfc1;
+  --blush-soft: #e8cfc9;
+  --rust:       #b8462a;
+  --bone:       #f6f1ea;
+  --bone-pure:  #faf6f0;
+
   /* Typography */
   --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono:    'JetBrains Mono', monospace;
   --font-body:    'Lora', Georgia, serif;
 
   /* Type scale */

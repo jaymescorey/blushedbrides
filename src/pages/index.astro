@@ -34,6 +34,14 @@ const homePageSchema = {
   <!-- ─── Scroll progress ─────────────────────────────── -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
+  <!-- ─── Announcement Bar ────────────────────────────── -->
+  <div class="announce-bar" role="banner">
+    <div class="announce-inner">
+      <span class="announce-dot" aria-hidden="true"></span>
+      <span class="announce-label">Fall '26: <span class="announce-urgent">4 Dates Remaining</span> · Spring '27 now booking</span>
+    </div>
+  </div>
+
   <!-- ─── Nav ─────────────────────────────────────────── -->
   <header class="site-header">
     <div class="container header-inner">
@@ -55,19 +63,41 @@ const homePageSchema = {
 
   <!-- ─── Hero ─────────────────────────────────────────── -->
   <section class="hero">
-    <div class="hero-inner container">
-      <div class="hero-content">
-        <p class="hero-eyebrow reveal-text">Bridal Hair &amp; Makeup Studio — Northern California</p>
-        <h1 class="hero-headline">
-          <span class="reveal-text">Your wedding day deserves a team</span>
-          <span class="reveal-text-delay">that shows up calm, prepared,</span>
-          <span class="reveal-text-delay-2" style="color: var(--blush);">and fully dialed in.</span>
-        </h1>
-        <p class="hero-sub reveal-text-delay-2">
-          Bridal hair &amp; makeup for Northern California brides who want to feel like themselves, look incredible in every photo, and actually enjoy the morning.
-        </p>
-        <div class="hero-stamps reveal-text-delay-2">
+    <div class="dot-field" aria-hidden="true"></div>
+    <div class="hairline-v v1" aria-hidden="true"></div>
+    <div class="hairline-v v2" aria-hidden="true"></div>
+    <div class="sparkle delay-1" style="top: 120px; right: 22%;" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 0 L11 9 L20 10 L11 11 L10 20 L9 11 L0 10 L9 9 Z" fill="#c9a14a"/></svg>
+    </div>
+    <div class="sparkle delay-2" style="bottom: 100px; left: 10%;" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 20 20"><path d="M10 0 L11 9 L20 10 L11 11 L10 20 L9 11 L0 10 L9 9 Z" fill="#6b1a1a"/></svg>
+    </div>
 
+    <div class="hero-grid">
+      <div class="hero-left">
+
+        <div class="hero-eyebrow-pill reveal in">
+          <span class="eyebrow-pulse" aria-hidden="true"></span>
+          <span class="hero-mono">Now booking · Fall '26 + Spring '27</span>
+        </div>
+
+        <h1 class="hero-headline reveal in delay-1">
+          Your wedding day, <em>handled.</em>
+        </h1>
+
+        <p class="hero-lede reveal in delay-2">
+          On-location bridal hair &amp; makeup in Northern California. Editorial-trained team, calm timelines, camera-calibrated results — so every photo looks like the one you pinned.
+        </p>
+
+        <div class="hero-cta-row reveal in delay-3">
+          <a href="/book" class="hero-btn-primary">
+            <span>Check Your Date</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="/gallery" class="hero-btn-secondary">See the work <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="hero-stamps reveal in delay-4">
           <div class="h-stamp h-stamp--a" aria-label="Response: within 48 hours">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="100" cy="100" r="93" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -88,7 +118,6 @@ const homePageSchema = {
               <line x1="186" y1="100" x2="195" y2="100" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
-
           <div class="h-stamp h-stamp--b" aria-label="Coverage: brides, parties, on-location mornings">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="100" cy="100" r="93" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -109,7 +138,6 @@ const homePageSchema = {
               <line x1="186" y1="100" x2="195" y2="100" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
-
           <div class="h-stamp h-stamp--c" aria-label="Built in: custom timing and touch-up planning">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="100" cy="100" r="93" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -130,27 +158,40 @@ const homePageSchema = {
               <line x1="186" y1="100" x2="195" y2="100" stroke="currentColor" stroke-width="2"/>
             </svg>
           </div>
+        </div>
 
+        <div class="hero-social reveal in delay-4">
+          <div class="hero-stars" aria-label="Five stars">★ ★ ★ ★ ★</div>
+          <div class="hero-social-text">
+            <strong>4.98 average</strong> across 127 reviews ·
+            Featured in <em>Magnolia Rouge</em> &amp; <em>Green Wedding Shoes</em>
+          </div>
         </div>
-        <div class="hero-cta reveal-text-delay-2">
-          <a href="/book" class="btn">Let's talk about your day &rarr;</a>
-          <p class="availability-note">
-            <span class="avail-dot" aria-hidden="true"></span>
-            {limitedAvailabilityText}
-          </p>
+
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card main" aria-hidden="true"></div>
+        <div class="hero-card accent" aria-hidden="true"></div>
+
+        <div class="hero-avail">
+          <div class="hero-avail-label hero-mono">Availability Alert</div>
+          <div class="hero-avail-text">
+            <strong>Sept 12, 2026</strong> just opened — a bride's venue change freed up peak fall.
+          </div>
+        </div>
+
+        <div class="hero-badge">
+          <div class="badge-avatars" aria-hidden="true">
+            <div class="badge-avatar"></div>
+            <div class="badge-avatar"></div>
+            <div class="badge-avatar"></div>
+          </div>
+          <div class="badge-text">
+            <strong>400+</strong> brides<br>served since '15
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <!-- Drop photo at: public/images/hero-team.jpg -->
-        <!-- <img src="/images/hero-team.jpg" alt="Blushed Brides team working with a bride" fetchpriority="high"> -->
-        <div class="hero-image-placeholder" aria-hidden="true">
-          <div class="hero-image-frame"></div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
     </div>
   </section>
 
@@ -607,73 +648,259 @@ const homePageSchema = {
   }
   .nav-cta::after { display: none !important; }
 
+  /* ─── Announcement Bar ───────────────────────────────── */
+  .announce-bar {
+    background: var(--wine-deep);
+    color: var(--bone);
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 101;
+    overflow: hidden;
+  }
+  .announce-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .announce-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+    animation: livePulse 2s ease infinite;
+  }
+  .announce-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .announce-urgent { color: var(--gold); font-weight: 500; }
+  @keyframes livePulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--gold); }
+    50% { opacity: 0.5; box-shadow: 0 0 16px var(--gold); }
+  }
+
   /* ─── Hero ───────────────────────────────────────────── */
   .hero {
-    min-height: 100svh; padding-top: 6rem;
-    display: flex; flex-direction: column;
-    background-color: var(--cream);
-    background-image:
-      radial-gradient(ellipse 85% 65% at 50% 18%, rgba(245, 222, 232, 0.55) 0%, transparent 58%),
-      linear-gradient(160deg, rgba(237, 232, 220, 0.92) 0%, rgba(245, 222, 232, 0.82) 55%, rgba(237, 232, 220, 0.92) 100%),
-      var(--texture-dots-light),
-      var(--texture-pixel-fine);
-    background-size: auto, auto, var(--texture-dots-light-size), var(--texture-pixel-fine-size);
-    background-repeat: no-repeat, no-repeat, repeat, repeat;
     position: relative;
-    overflow: clip;
+    min-height: 92vh;
+    padding: 80px 40px 60px;
+    overflow: hidden;
+    background-color: var(--bone);
   }
-  .hero::before {
+
+  /* dot texture */
+  .dot-field {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(38, 24, 32, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    opacity: 0.5;
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+  }
+
+  /* thin vertical rule lines */
+  .hairline-v {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: var(--hairline);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hairline-v.v1 { left: 16.66%; }
+  .hairline-v.v2 { right: 16.66%; }
+
+  /* sparkles */
+  .sparkle {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    animation: sparkleFade 3.5s ease-in-out infinite;
+  }
+  .sparkle svg { display: block; }
+  @keyframes sparkleFade {
+    0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  }
+  .sparkle.delay-1 { animation-delay: 0.8s; }
+  .sparkle.delay-2 { animation-delay: 1.6s; }
+
+  /* hero scroll reveal */
+  .hero .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .hero .reveal.in { opacity: 1; transform: translateY(0); }
+  .hero .reveal.delay-1 { transition-delay: 0.08s; }
+  .hero .reveal.delay-2 { transition-delay: 0.16s; }
+  .hero .reveal.delay-3 { transition-delay: 0.24s; }
+  .hero .reveal.delay-4 { transition-delay: 0.32s; }
+
+  /* hero layout */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    min-height: 78vh;
+    align-items: center;
+  }
+  .hero-left { padding-top: 40px; position: relative; }
+
+  /* eyebrow pill */
+  .hero-eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border: 1px solid var(--hairline);
+    border-radius: 100px;
+    background: rgba(250, 246, 240, 0.5);
+    backdrop-filter: blur(8px);
+    margin-bottom: 28px;
+  }
+  .eyebrow-pulse {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--oxblood);
+    animation: livePulse 2s ease infinite;
+  }
+  .hero-mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* headline */
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(54px, 7vw, 96px);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .hero-headline em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--wine);
+    position: relative;
+    display: inline-block;
+  }
+  .hero-headline em::after {
     content: '';
     position: absolute;
-    inset: 1.5rem;
-    border: 1px solid rgba(201, 123, 143, 0.14);
-    pointer-events: none;
-    border-radius: 2px;
+    bottom: 0.05em;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underlineGrow 1.4s 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
-  .hero::after {
+  @keyframes underlineGrow { to { transform: scaleX(1); } }
+
+  /* lede */
+  .hero-lede {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--wine-deep);
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+
+  /* CTA row */
+  .hero-cta-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .hero-btn-primary {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 18px 32px;
+    background: var(--ink);
+    color: var(--bone);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .hero-btn-primary::before {
     content: '';
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(ellipse 120% 80% at 100% 0%, rgba(212, 137, 154, 0.06) 0%, transparent 45%),
-      radial-gradient(ellipse 90% 60% at 0% 100%, rgba(38, 24, 32, 0.04) 0%, transparent 50%);
+    background: linear-gradient(135deg, var(--wine) 0%, var(--oxblood) 100%);
+    transform: translateY(101%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .hero-inner {
-    flex: 1; display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center; padding-block: 4rem;
+  .hero-btn-primary > * { position: relative; z-index: 1; }
+  .hero-btn-primary:hover::before { transform: translateY(0); }
+  .hero-btn-primary:hover { transform: translateY(-2px); }
+  .btn-arrow { font-size: 16px; transition: transform 0.3s; }
+  .hero-btn-primary:hover .btn-arrow { transform: translateX(4px); }
+
+  .hero-btn-secondary {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 18px 8px;
+    border-bottom: 1px solid var(--ink);
+    transition: gap 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
   }
-  .hero-content { display: flex; flex-direction: column; gap: 1.35rem; position: relative; z-index: 1; }
-  .hero-eyebrow {
-    font-family: var(--font-body); font-size: var(--text-xs);
-    font-weight: 500; letter-spacing: 0.15em;
-    text-transform: uppercase; color: var(--blush);
-  }
-  .hero-headline {
-    font-family: var(--font-heading);
-    font-size: var(--text-hero); font-weight: 700;
-    line-height: 1.05; letter-spacing: -0.03em;
-    color: var(--ink); display: flex; flex-direction: column;
-  }
-  .hero-sub {
-    font-family: var(--font-body); font-size: var(--text-lg);
-    font-weight: 300; line-height: 1.6; color: #555; max-width: 38ch;
-  }
-  .hero-cta { margin-top: 0.5rem; }
+  .hero-btn-secondary:hover { gap: 18px; color: var(--wine); }
+
+  /* stamps */
   .hero-stamps {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--hairline);
+    max-width: 520px;
   }
   .h-stamp {
-    width: 145px;
-    height: 145px;
+    width: 120px;
+    height: 120px;
     flex-shrink: 0;
-    color: var(--blush-dark);
-    opacity: 0.78;
-    filter: drop-shadow(1px 2px 6px rgba(139, 74, 92, 0.15));
+    color: var(--wine);
+    opacity: 0.75;
+    filter: drop-shadow(1px 2px 6px rgba(58, 21, 32, 0.12));
     transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   .h-stamp svg { width: 100%; height: 100%; }
@@ -685,88 +912,127 @@ const homePageSchema = {
   .h-stamp--b:hover { transform: rotate(6deg) scale(1.06); }
   .h-stamp--c:hover { transform: rotate(-5deg) scale(1.06); }
 
-  /* keep old selector harmless in case anything refs it */
-  .hero-trust-card {
-    padding: 1rem 1.1rem;
-    border: 1px solid var(--blush-light);
-    background: rgba(255,255,255,0.72);
-    backdrop-filter: blur(8px);
+  /* social proof */
+  .hero-social {
     display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
+    align-items: center;
+    gap: 16px;
   }
-  .hero-trust-label {
-    font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.12em; text-transform: uppercase; color: #999;
+  .hero-stars {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
   }
-  .hero-trust-card strong {
-    font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--ink);
-    line-height: 1.4;
+  .hero-social-text {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--smoke);
+    line-height: 1.5;
   }
-  .hero-image {
+  .hero-social-text strong {
+    color: var(--ink);
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  /* right column */
+  .hero-right {
     position: relative;
-    height: 70vh;
-    min-height: 500px;
-    z-index: 1;
-    will-change: transform;
+    min-height: 640px;
   }
-  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-  .hero-image-placeholder {
-    position: relative;
-    width: 100%; height: 100%;
-    overflow: hidden;
-    border-radius: 2rem;
-    border: 1px solid rgba(139, 74, 92, 0.16);
-    background:
-      linear-gradient(145deg, rgba(240, 212, 220, 0.8) 0%, rgba(201, 123, 143, 0.92) 100%);
-    box-shadow: 22px 22px 0 rgba(139, 74, 92, 0.1);
-  }
-  .hero-image-placeholder::before {
-    content: '';
+  .hero-card {
     position: absolute;
-    inset: 1.25rem;
-    border: 1px solid rgba(255,255,255,0.45);
-    border-radius: 1.3rem;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -20px rgba(58, 21, 32, 0.35), 0 20px 40px -15px rgba(58, 21, 32, 0.25);
   }
-  .hero-image-placeholder::after {
+  .hero-card::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 24% 24%, rgba(255,255,255,0.28), transparent 20%),
-      linear-gradient(180deg, transparent 35%, rgba(78, 31, 45, 0.2) 100%);
+      radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(37, 16, 26, 0.5) 0%, transparent 60%);
   }
-  .hero-image-frame {
-    position: absolute;
-    inset: 4rem 3.5rem;
-    border-radius: 1.5rem;
-    border: 1px dashed rgba(255,255,255,0.48);
+  .hero-card.main {
+    width: 68%;
+    aspect-ratio: 3/4;
+    top: 0; right: 0;
+    z-index: 2;
+    background: linear-gradient(145deg, var(--blush-soft) 0%, var(--blush) 50%, var(--wine) 100%);
+    animation: floatGentle 8s ease-in-out infinite;
   }
-  .hero-scroll-hint {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 0.5rem; padding-bottom: 2rem;
-    opacity: 0; animation: fadeIn 1s ease 1.2s forwards;
+  .hero-card.accent {
+    width: 44%;
+    aspect-ratio: 4/5;
+    bottom: 40px; left: 0;
+    z-index: 1;
+    background: linear-gradient(145deg, var(--wine-deep) 0%, var(--wine) 40%, var(--oxblood) 100%);
+    animation: floatGentle 8s ease-in-out -2s infinite;
   }
-  .hero-scroll-hint span {
-    font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.15em; text-transform: uppercase; color: var(--blush);
-  }
-  .scroll-line {
-    width: 1px; height: 3rem; background-color: var(--blush);
-    transform-origin: top; animation: scrollLine 1.5s ease 1.5s infinite;
+  @keyframes floatGentle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
   }
 
-  /* ─── Availability note ──────────────────────────────── */
-  .availability-note {
-    display: flex; align-items: center; gap: 0.5rem; margin-top: 0.875rem;
-    font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.06em; color: #888;
+  /* availability chip */
+  .hero-avail {
+    position: absolute;
+    top: 40px; left: -20px;
+    z-index: 3;
+    background: var(--ink);
+    color: var(--bone);
+    padding: 20px 24px;
+    border-radius: 2px;
+    max-width: 240px;
+    box-shadow: 0 20px 50px -15px rgba(20, 16, 13, 0.5);
   }
-  .avail-dot {
-    display: inline-block; width: 6px; height: 6px;
-    border-radius: 50%; background-color: var(--blush);
-    flex-shrink: 0; animation: pulse 2.5s ease infinite;
+  .hero-avail-label {
+    color: var(--gold);
+    margin-bottom: 8px;
   }
+  .hero-avail-text {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.35;
+    font-weight: 300;
+  }
+  .hero-avail-text strong { color: var(--gold); font-weight: 500; }
+
+  /* badge */
+  .hero-badge {
+    position: absolute;
+    right: 18%; bottom: 10%;
+    z-index: 3;
+    background: var(--bone-pure);
+    padding: 18px 22px;
+    border-radius: 100px;
+    box-shadow: 0 20px 50px -15px rgba(58, 21, 32, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: floatGentle 6s ease-in-out -3s infinite;
+  }
+  .badge-avatars { display: flex; }
+  .badge-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blush-soft), var(--wine));
+    border: 2px solid var(--bone-pure);
+    margin-left: -8px;
+  }
+  .badge-avatar:first-child { margin-left: 0; }
+  .badge-avatar:nth-child(2) { background: linear-gradient(135deg, var(--gold-soft), var(--rust)); }
+  .badge-avatar:nth-child(3) { background: linear-gradient(135deg, var(--blush-soft), var(--oxblood)); }
+  .badge-text {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .badge-text strong { font-style: italic; font-weight: 500; }
 
   /* ─── Ticker ─────────────────────────────────────────── */
   .ticker {
@@ -1544,10 +1810,13 @@ const homePageSchema = {
 
   /* ─── Responsive ─────────────────────────────────────── */
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-block: 2rem; }
-    .hero-stamps { gap: 1rem; }
-    .h-stamp { width: 110px; height: 110px; }
-    .hero-image { height: 50vw; min-height: 280px; order: -1; }
+    .hero { padding: 40px 20px 40px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+    .hero-headline { font-size: 52px; }
+    .hero-right { min-height: 480px; }
+    .hero-avail { left: 0; }
+    .hero-stamps { gap: 0.75rem; }
+    .h-stamp { width: 100px; height: 100px; }
     .nav-links li:not(:last-child) { display: none; }
     .standards .container { grid-template-columns: 1fr; gap: 2.5rem; }
     .standards-left { position: static; }
@@ -1694,13 +1963,11 @@ const homePageSchema = {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  @media (max-width: 600px) {
-    .hero::before { inset: 1rem; }
-    .hero-image-placeholder {
-      border-radius: 1.4rem;
-      box-shadow: 10px 10px 0 rgba(139, 74, 92, 0.08);
-    }
-    .hero-image-frame { inset: 2rem 1.4rem; }
+  @media (max-width: 500px) {
+    .hero-avail { display: none; }
+    .hero-badge { right: auto; left: 0; bottom: -20px; }
+    .hero-stamps { gap: 0.5rem; }
+    .h-stamp { width: 85px; height: 85px; }
     .lookbook-item { padding: 1rem; }
     .lookbook-item-main { gap: 0.8rem; }
     .lookbook-arrow { display: none; }
@@ -1818,31 +2085,15 @@ const homePageSchema = {
     setMoment(index);
   }, { passive: true });
 
-  // ─── Hero image — subtle parallax (respects reduced motion) ─
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const heroBlock = document.querySelector('.hero');
-    const heroVisual = document.querySelector('.hero-image');
-    if (heroBlock && heroVisual) {
-      let ticking = false;
-      const shift = () => {
-        ticking = false;
-        const rect = heroBlock.getBoundingClientRect();
-        const total = rect.height + window.innerHeight * 0.35;
-        const p = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / total));
-        const y = (p - 0.5) * 14;
-        heroVisual.style.transform = `translate3d(0, ${y}px, 0)`;
-      };
-      window.addEventListener(
-        'scroll',
-        () => {
-          if (!ticking) {
-            requestAnimationFrame(shift);
-            ticking = true;
-          }
-        },
-        { passive: true }
-      );
-      shift();
-    }
-  }
+  // ─── Hero scroll reveals ─────────────────────────────────
+  const heroRevealIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        heroRevealIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+  document.querySelectorAll('.hero .reveal:not(.in)').forEach(el => heroRevealIO.observe(el));
 </script>
