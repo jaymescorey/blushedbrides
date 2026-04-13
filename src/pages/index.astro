@@ -1,6 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { bookingYearsText, limitedAvailabilityText } from '../lib/bookingDates';
+
+const homePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HomePage',
+  '@id': 'https://blushedbrides.com/#home',
+  url: 'https://blushedbrides.com/',
+  name: 'Blushed Brides — Bridal Hair & Makeup, Northern California',
+  description: 'Bridal hair and makeup for Northern California brides with on-location wedding day beauty services.',
+  isPartOf: {
+    '@id': 'https://blushedbrides.com/#website',
+  },
+  about: {
+    '@id': 'https://blushedbrides.com/#business',
+  },
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: 'https://blushedbrides.com/images/og-blushedbrides.jpg',
+  },
+};
 ---
 
 <BaseLayout
@@ -8,6 +27,9 @@ import { bookingYearsText, limitedAvailabilityText } from '../lib/bookingDates';
   description="Bridal hair & makeup for Northern California brides who want to feel like themselves — only more. Book your wedding day artist."
   canonicalUrl="https://blushedbrides.com/"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(homePageSchema)} />
+  </Fragment>
 
   <!-- ─── Scroll progress ─────────────────────────────── -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>

@@ -1,6 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { bookingYearsText, limitedAvailabilityText } from '../lib/bookingDates';
+
+const servicesPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://blushedbrides.com/services#service',
+      name: 'Bridal Hair and Makeup Services',
+      provider: {
+        '@id': 'https://blushedbrides.com/#business',
+      },
+      serviceType: [
+        'Bridal Hair',
+        'Bridal Makeup',
+        'Bridal Party Hair and Makeup',
+        'Bridal Beauty Trial',
+      ],
+      areaServed: {
+        '@type': 'AdministrativeArea',
+        name: 'Northern California',
+      },
+      url: 'https://blushedbrides.com/services',
+      offers: {
+        '@type': 'OfferCatalog',
+        name: 'Bridal Beauty Services',
+      },
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://blushedbrides.com/services#webpage',
+      url: 'https://blushedbrides.com/services',
+      name: 'Services & Pricing — Blushed Brides',
+      isPartOf: {
+        '@id': 'https://blushedbrides.com/#website',
+      },
+      about: {
+        '@id': 'https://blushedbrides.com/#business',
+      },
+      mainEntity: {
+        '@id': 'https://blushedbrides.com/services#service',
+      },
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -8,6 +52,9 @@ import { bookingYearsText, limitedAvailabilityText } from '../lib/bookingDates';
   description="Bridal hair, bridal makeup, and full bridal party services for Northern California weddings. See what's included and get pricing."
   canonicalUrl="https://blushedbrides.com/services"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(servicesPageSchema)} />
+  </Fragment>
 
   <!-- ─── Nav ─────────────────────────────────────────── -->
   <header class="site-header">
