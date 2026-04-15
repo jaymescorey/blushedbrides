@@ -1,0 +1,791 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { limitedAvailabilityText } from '../lib/bookingDates';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://blushedbrides.com/faq#webpage',
+  url: 'https://blushedbrides.com/faq',
+  name: 'FAQ — Blushed Brides',
+  isPartOf: { '@id': 'https://blushedbrides.com/#website' },
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How far in advance should I book?',
+      acceptedAnswer: { '@type': 'Answer', text: 'As early as possible. Spring and fall weekends — especially in Northern California wedding season — book out 12 to 18 months ahead. If your date is within six months, reach out right away and we\'ll confirm what\'s still available.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you travel to the venue?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. We come to you — your hotel, getting-ready suite, or venue. Travel fees apply for locations outside our base area.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a trial appointment?',
+      acceptedAnswer: { '@type': 'Answer', text: 'A trial is strongly recommended for every bride. It lets us nail the look before wedding day so there are no surprises when it matters most.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does wedding day hair and makeup take?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Bridal hair and makeup together typically takes 2.5 to 3.5 hours. We build a custom timeline for your party so everyone is ready with time to spare.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you accommodate my whole bridal party?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle parties of any size. Let us know your headcount and service needs when you inquire and we\'ll confirm what works.' }
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="FAQ — Blushed Brides"
+  description="Common questions about booking bridal hair and makeup with Blushed Brides — availability, trials, travel, timelines, and more."
+  canonicalUrl="https://blushedbrides.com/faq"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
+  </Fragment>
+
+  <!-- ─── Nav ─────────────────────────────────────────────── -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="nav-logo" aria-label="Blushed Brides home">Blushed Brides</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq" class="active" aria-current="page">FAQ</a></li>
+          <li><a href="/book" class="nav-cta">Book Now</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Mobile Drawer ────────────────────────────────────── -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-inner">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+      <nav aria-label="Mobile navigation">
+        <ul class="drawer-links">
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq" aria-current="page">FAQ</a></li>
+          <li><a href="/book" class="drawer-cta">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <main>
+
+    <!-- ─── Hero ─────────────────────────────────────────── -->
+    <section class="faq-hero">
+      <p class="eyebrow reveal-text">Before You Book</p>
+      <h1 class="faq-heading">
+        <span class="reveal-text">Questions,</span>
+        <em class="reveal-text-delay">answered.</em>
+      </h1>
+      <p class="faq-sub fade-up">
+        Everything brides ask before they reach out. If you don&rsquo;t find what
+        you need here, send us a message &mdash; we&rsquo;re happy to talk it through.
+      </p>
+      <div class="hero-actions fade-up">
+        <a href="/book" class="btn">Check Your Date &rarr;</a>
+        <p class="avail-note">
+          <span class="avail-dot" aria-hidden="true"></span>
+          {limitedAvailabilityText}
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── FAQ Groups ────────────────────────────────────── -->
+    <section class="faq-section">
+      <div class="container faq-inner">
+
+        <!-- Group 1: Booking -->
+        <div class="faq-group fade-up">
+          <p class="faq-group-label">01 &mdash; Booking &amp; Availability</p>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>How far in advance should I book?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>As early as possible. Spring and fall weekends &mdash; especially in Northern California wedding season &mdash; book out 12 to 18 months ahead. If your date is within six months, reach out right away and we&rsquo;ll confirm what&rsquo;s still available.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What does booking actually involve?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>We start with a quick inquiry to confirm your date, location, and service count. Once we&rsquo;ve confirmed availability and fit, we walk you through package options and next steps. A deposit holds your date.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Is my date still available?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>The only way to know is to ask. Availability changes quickly, especially for peak season weekends. Head to the <a href="/book">booking page</a>, share your date, and we&rsquo;ll get back to you within 48 hours.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Do you require a deposit?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. A deposit is required to secure your date. Details are shared during the booking process. Until a deposit is received, your date remains open to other inquiries.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- Group 2: Services & Trials -->
+        <div class="faq-group fade-up">
+          <p class="faq-group-label">02 &mdash; Services &amp; Trials</p>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Do I need a trial appointment?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>A trial is strongly recommended for every bride. It gives us time to refine your look, work through any adjustments, and make sure you walk into wedding morning with zero uncertainty. Trials are booked separately from your wedding day.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>When should I schedule my trial?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Ideally 4 to 8 weeks before your wedding date. Close enough that your hair is near its wedding-day length and condition, but with enough runway to adjust anything before the big day.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Can you accommodate my whole bridal party?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. We handle parties of any size. Let us know your headcount and service needs when you inquire and we&rsquo;ll confirm what works. Larger parties may require additional artists to stay on timeline.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What services do you offer?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Bridal hair, bridal makeup, bridal party hair and makeup, and trial appointments. Full details and what&rsquo;s included with each service are on the <a href="/services">Services page</a>.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- Group 3: Wedding Day Logistics -->
+        <div class="faq-group fade-up">
+          <p class="faq-group-label">03 &mdash; Wedding Day Logistics</p>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Do you travel to the venue?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Yes. We come to you &mdash; your hotel, getting-ready suite, or venue. Travel fees apply for locations outside our base area. Share your venue location when you inquire and we&rsquo;ll include travel details in your quote.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>How long does wedding day hair and makeup take?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Bridal hair and makeup together typically takes 2.5 to 3.5 hours. For the full party, we build a custom timeline based on your service count and first-look time so everyone is ready with time to spare &mdash; not rushing.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What should I do to prep for my appointment?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Arrive with clean, dry hair. Avoid heavy product. Have inspiration photos ready if you have them &mdash; even rough references help. We&rsquo;ll send a detailed prep guide once you&rsquo;re booked.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Will my hair and makeup last all day?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>That&rsquo;s the goal. We use long-wear techniques and humidity-resistant products specifically chosen for full-day hold. Every bride also leaves with a small touch-up kit so you&rsquo;re covered through the reception.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- Group 4: Pricing & Payment -->
+        <div class="faq-group fade-up">
+          <p class="faq-group-label">04 &mdash; Pricing &amp; Payment</p>
+          <div class="faq-list">
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>How much does bridal hair and makeup cost?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Pricing depends on your service count, party size, and location. Full pricing details are on the <a href="/services">Services page</a>. We&rsquo;re happy to walk through a custom quote once you share the specifics.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What payment methods do you accept?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Details are shared during the booking process. We&rsquo;ll make sure you know exactly what&rsquo;s due and when before you commit to anything.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>What is your cancellation policy?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                <p>Deposits are non-refundable as they hold your date and remove it from availability. Full policy details are included in your booking agreement. If your plans change, reach out as early as possible and we&rsquo;ll do our best to work with you.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Still Have Questions ──────────────────────────── -->
+    <section class="faq-contact fade-up">
+      <div class="container faq-contact-inner">
+        <p class="eyebrow">Still have questions?</p>
+        <h2>We&rsquo;re easy to reach.</h2>
+        <p class="faq-contact-sub">Send us a note through the booking form and we&rsquo;ll get back to you within 48 hours. No pressure, no commitment &mdash; just answers.</p>
+        <a href="/book" class="btn">Send a Message &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ─── Footer ────────────────────────────────────────── -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-brand">Blushed Brides</p>
+        <p class="footer-sub">Bridal Hair &amp; Makeup &middot; Northern California</p>
+        <nav class="footer-nav">
+          <a href="/services">Services</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/about">About</a>
+          <a href="/faq">FAQ</a>
+          <a href="/book">Book</a>
+        </nav>
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </main>
+
+</BaseLayout>
+
+<style>
+/* ─── Header ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--gutter);
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+.site-header--scrolled {
+  background: rgba(250, 246, 242, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 137, 154, 0.15);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { opacity: 1; }
+.nav-cta {
+  background: var(--blush-dark);
+  color: var(--off-white) !important;
+  opacity: 1 !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.faq-hero {
+  padding-top: calc(var(--space-2xl) + 1rem);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+  margin-bottom: 1rem;
+}
+.faq-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+}
+.faq-heading span { display: block; }
+.faq-heading em {
+  display: block;
+  font-style: italic;
+  color: var(--blush-dark);
+}
+.faq-sub {
+  max-width: 52ch;
+  font-size: var(--text-lg);
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.75;
+  margin-bottom: 2rem;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.avail-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+.avail-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--blush);
+  animation: pulseDot 2.2s ease-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulseDot {
+  0%   { box-shadow: 0 0 0 0 rgba(212, 137, 154, 0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(212, 137, 154, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 137, 154, 0); }
+}
+
+/* ─── FAQ Section ────────────────────────────────────────── */
+.faq-section {
+  border-top: 1px solid rgba(212, 137, 154, 0.18);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.faq-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* ─── FAQ Group ──────────────────────────────────────────── */
+.faq-group-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 0.25rem;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Accordion Item ─────────────────────────────────────── */
+.faq-item {
+  border-bottom: 1px solid var(--hairline);
+}
+.faq-item:first-of-type {
+  border-top: 1px solid var(--hairline);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::marker { display: none; }
+.faq-question:hover { color: var(--blush-dark); }
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--hairline);
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  background: var(--blush-dark);
+  border-radius: 2px;
+  transition: transform 0.25s var(--ease-out-luxe), opacity 0.2s;
+}
+.faq-icon::before {
+  width: 10px; height: 1.5px;
+  transform: translate(-50%, -50%);
+}
+.faq-icon::after {
+  width: 1.5px; height: 10px;
+  transform: translate(-50%, -50%);
+}
+.faq-item[open] .faq-icon {
+  background: var(--blush-light);
+  border-color: var(--blush);
+}
+.faq-item[open] .faq-icon::after {
+  transform: translate(-50%, -50%) scaleY(0);
+  opacity: 0;
+}
+.faq-item[open] .faq-question { color: var(--blush-dark); }
+
+.faq-answer {
+  padding-bottom: 1.5rem;
+  max-width: 66ch;
+}
+.faq-answer p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.75;
+}
+.faq-answer a {
+  color: var(--blush-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.faq-answer a:hover { opacity: 0.75; }
+
+/* ─── Still Have Questions ───────────────────────────────── */
+.faq-contact {
+  background: var(--cream);
+  border-top: 1px solid rgba(212, 137, 154, 0.18);
+  padding: var(--space-xl) var(--gutter);
+  text-align: center;
+}
+.faq-contact-inner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.faq-contact h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0.75rem 0 1.25rem;
+}
+.faq-contact-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+/* ─── Container util (used if not in global) ─────────────── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  padding: var(--space-lg) var(--gutter);
+  text-align: center;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.footer-brand {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.footer-sub {
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-nav a {
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--ink); }
+.footer-copy {
+  font-size: var(--text-xs);
+  color: var(--taupe);
+  opacity: 0.65;
+}
+
+/* ─── Hamburger ──────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.2s;
+}
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links  { display: none; }
+}
+
+/* ─── Mobile Drawer ──────────────────────────────────────── */
+.mobile-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(280px, 80vw);
+  background: var(--off-white);
+  border-left: 1px solid var(--hairline);
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 0.3s var(--ease-out-luxe);
+}
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 24, 32, 0.35);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.drawer-inner {
+  padding: 2rem 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.drawer-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--taupe);
+  cursor: pointer;
+  margin-bottom: 2.5rem;
+  line-height: 1;
+}
+.drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.drawer-links a {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--hairline);
+  transition: color 0.2s;
+}
+.drawer-links a:hover,
+.drawer-links a[aria-current="page"] { color: var(--blush-dark); }
+.drawer-cta {
+  margin-top: 1.5rem;
+  display: inline-block !important;
+  background: var(--blush-dark);
+  color: var(--off-white) !important;
+  padding: 0.75rem 1.5rem !important;
+  border: none !important;
+  border-radius: 2px;
+  font-family: var(--font-body) !important;
+  font-size: var(--text-sm) !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ─── Scroll Reveal ──────────────────────────────────────── */
+.reveal-text {
+  display: block;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out-luxe), transform 0.7s var(--ease-out-luxe);
+}
+.reveal-text.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-text-delay {
+  display: block;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s 0.15s var(--ease-out-luxe), transform 0.7s 0.15s var(--ease-out-luxe);
+}
+.reveal-text-delay.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s var(--ease-out-luxe), transform 0.65s var(--ease-out-luxe);
+}
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+  // ─── Header scroll state ─────────────────────────────────
+  const header = document.getElementById('siteHeader');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('site-header--scrolled', window.scrollY > 30);
+    }, { passive: true });
+  }
+
+  // ─── Scroll reveal ───────────────────────────────────────
+  const revealEls = document.querySelectorAll<HTMLElement>(
+    '.reveal-text, .reveal-text-delay, .fade-up'
+  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+</script>
