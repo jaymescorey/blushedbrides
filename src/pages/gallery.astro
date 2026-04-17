@@ -1,35 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const placeholderImage = '/images/pattern-01.png';
-
 // First batch — rendered server-side
 const initialPhotos = [
-  { src: placeholderImage, alt: 'Bridal hair updo with soft tendrils',        side: 'left',  size: 'tall'   },
-  { src: placeholderImage, alt: 'Soft glam bridal makeup',                    side: 'right', size: 'tall'   },
-  { src: placeholderImage, alt: 'Romantic braided bridal hair',                side: 'left',  size: 'wide'   },
-  { src: placeholderImage, alt: 'Natural bridal makeup, warm tones',           side: 'right', size: 'square' },
-  { src: placeholderImage, alt: 'Bridal party ready',                          side: 'left',  size: 'square' },
-  { src: placeholderImage, alt: 'Loose waves, floral pins',                    side: 'right', size: 'wide'   },
-  { src: placeholderImage, alt: 'Dewy skin, editorial bridal look',            side: 'left',  size: 'tall'   },
-  { src: placeholderImage, alt: 'Bridal trial — soft blush tones',             side: 'right', size: 'tall'   },
+  { src: '/images/blushed-brides-bridal-hair-updo-elegant.jpg',        alt: 'Elegant bridal hair updo',                       side: 'left',  size: 'tall'   },
+  { src: '/images/blushed-brides-bridal-soft-glam-makeup-look.jpg',    alt: 'Soft glam bridal makeup look',                   side: 'right', size: 'tall'   },
+  { src: '/images/blushed-brides-bridal-party-hair-styling.png',       alt: 'Bridal party hair styling',                      side: 'left',  size: 'wide'   },
+  { src: '/images/blushed-brides-bridal-natural-makeup-look.png',      alt: 'Natural bridal makeup, warm tones',               side: 'right', size: 'square' },
+  { src: '/images/blushed-brides-bridal-party-makeup-look.jpg',        alt: 'Bridal party makeup look',                       side: 'left',  size: 'square' },
+  { src: '/images/blushed-brides-bridal-hair-updo-soft-waves.jpg',     alt: 'Bridal updo with soft waves',                    side: 'right', size: 'wide'   },
+  { src: '/images/blushed-brides-bridal-makeup-artist-on-site.jpg',    alt: 'Bridal makeup artist on site',                   side: 'left',  size: 'tall'   },
+  { src: '/images/blushed-brides-bride-getting-ready-soft-glam.jpg',   alt: 'Bride getting ready, soft glam',                 side: 'right', size: 'tall'   },
 ];
 
 // Additional photos — appended client-side as user scrolls
-// Replace src values here when real images are ready
 const morePhotos = [
-  { src: placeholderImage, alt: 'Low chignon with veil',                       side: 'left',  size: 'wide'   },
-  { src: placeholderImage, alt: 'Full glam bridal makeup',                     side: 'right', size: 'square' },
-  { src: placeholderImage, alt: 'Golden hour bride, loose waves',              side: 'left',  size: 'square' },
-  { src: placeholderImage, alt: 'Bridal party hair, bridesmaid prep',          side: 'right', size: 'wide'   },
-  { src: placeholderImage, alt: 'Classic updo, pearl pins',                    side: 'left',  size: 'tall'   },
-  { src: placeholderImage, alt: 'Bronzed editorial bride',                     side: 'right', size: 'tall'   },
-  { src: placeholderImage, alt: 'Textured braid with ribbon',                  side: 'left',  size: 'wide'   },
-  { src: placeholderImage, alt: 'Soft smoky eye, natural lip',                 side: 'right', size: 'square' },
-  { src: placeholderImage, alt: 'Veil pull-back moment',                       side: 'left',  size: 'square' },
-  { src: placeholderImage, alt: 'Glowing skin, minimal makeup',                side: 'right', size: 'wide'   },
-  { src: placeholderImage, alt: 'Romantic side sweep',                         side: 'left',  size: 'tall'   },
-  { src: placeholderImage, alt: 'Bold red lip, sleek hair',                    side: 'right', size: 'tall'   },
+  { src: '/images/blushed-brides-bridal-updo-elegant-wedding-hair.jpg',  alt: 'Elegant wedding hair updo',                    side: 'left',  size: 'wide'   },
+  { src: '/images/blushed-brides-bride-glam-wedding-makeup.jpg',         alt: 'Full glam bridal makeup',                      side: 'right', size: 'square' },
+  { src: '/images/blushed-brides-wedding-morning-bridal-beauty.jpg',     alt: 'Wedding morning bridal beauty',                side: 'left',  size: 'square' },
+  { src: '/images/blushed-brides-bridal-party-on-site-styling.png',      alt: 'Bridal party on-site styling',                 side: 'right', size: 'wide'   },
+  { src: '/images/blushed-brides-bridal-updo-romantic-wedding-hair.png', alt: 'Romantic wedding hair updo',                   side: 'left',  size: 'tall'   },
+  { src: '/images/blushed-brides-bride-airbrush-makeup-wedding.jpg',     alt: 'Bride airbrush makeup, wedding day',           side: 'right', size: 'tall'   },
+  { src: '/images/blushed-brides-wedding-day-bridal-hair-styling.png',   alt: 'Wedding day bridal hair styling',              side: 'left',  size: 'wide'   },
+  { src: '/images/blushed-brides-bridal-beauty-natural-look.jpg',        alt: 'Natural bridal beauty look',                   side: 'right', size: 'square' },
+  { src: '/images/blushed-brides-on-location-bridal-beauty-prep.jpg',    alt: 'On-location bridal beauty prep',               side: 'left',  size: 'square' },
+  { src: '/images/blushed-brides-bride-natural-glam-makeup.jpg',         alt: 'Bride natural glam makeup',                    side: 'right', size: 'wide'   },
+  { src: '/images/blushed-brides-wedding-morning-hair-styling.jpg',      alt: 'Wedding morning hair styling',                 side: 'left',  size: 'tall'   },
+  { src: '/images/blushed-brides-bride-wedding-day-glam-look.jpg',       alt: 'Bride wedding day glam look',                  side: 'right', size: 'tall'   },
 ];
 
 const leftPhotos  = initialPhotos.filter(p => p.side === 'left');
