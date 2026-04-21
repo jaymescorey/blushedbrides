@@ -1880,14 +1880,14 @@ const homePageSchema = {
 
   /* ─── Responsive ─────────────────────────────────────── */
   @media (max-width: 900px) {
-    .hero { padding: 40px 20px 40px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+    .hero { padding: 40px 20px 40px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
     .hero-headline { font-size: 52px; }
-    .hero-right { min-height: 480px; }
+    .hero-right { min-height: 320px; }
     .hero-avail { left: 0; }
-    .hero-stamps { gap: 0.75rem; }
-    .h-stamp { width: 100px; height: 100px; }
+    .hero-stamps { display: none; }
     .nav-links li:not(:last-child) { display: none; }
+    .standards { padding-block: var(--space-lg); }
     .standards .container { grid-template-columns: 1fr; gap: 2.5rem; }
     .standards-left { position: static; }
     .lookbook-inner { grid-template-columns: 1fr; min-height: auto; }
