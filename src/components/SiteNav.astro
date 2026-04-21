@@ -1,0 +1,90 @@
+---
+const pathname = Astro.url.pathname;
+const isActive = (path: string) =>
+  path === '/' ? pathname === '/' : pathname.startsWith(path);
+---
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="Blushed Brides home">
+      <span class="logo-first">Blushed</span>
+      <span class="logo-second">Brides</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a></li>
+        <li><a href="/services" aria-current={isActive('/services') ? 'page' : undefined}>Services</a></li>
+        <li><a href="/gallery" aria-current={isActive('/gallery') ? 'page' : undefined}>Gallery</a></li>
+        <li><a href="/about" aria-current={isActive('/about') ? 'page' : undefined}>About</a></li>
+        <li><a href="/faq" aria-current={isActive('/faq') ? 'page' : undefined}>FAQ</a></li>
+        <li><a href="/book" class="nav-cta" aria-current={isActive('/book') ? 'page' : undefined}>Book Now</a></li>
+      </ul>
+    </nav>
+    <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="bb-scrim" id="bbScrim" aria-hidden="true"></div>
+
+<div class="bb-drawer" id="bbDrawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="bb-drawer-head">
+    <a href="/" class="bb-drawer-logo">
+      <span class="logo-first">Blushed</span>
+      <span class="logo-second">Brides</span>
+    </a>
+    <button class="bb-drawer-close" id="bbDrawerClose" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="2" y1="2" x2="16" y2="16"/>
+        <line x1="16" y1="2" x2="2" y2="16"/>
+      </svg>
+    </button>
+  </div>
+  <nav class="bb-drawer-nav">
+    <a href="/" class="mob-link" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
+    <a href="/services" class="mob-link" aria-current={isActive('/services') ? 'page' : undefined}>Services</a>
+    <a href="/gallery" class="mob-link" aria-current={isActive('/gallery') ? 'page' : undefined}>Gallery</a>
+    <a href="/about" class="mob-link" aria-current={isActive('/about') ? 'page' : undefined}>About</a>
+    <a href="/faq" class="mob-link" aria-current={isActive('/faq') ? 'page' : undefined}>FAQ</a>
+    <a href="/book" class="mob-link mob-cta" aria-current={isActive('/book') ? 'page' : undefined}>Book Now</a>
+  </nav>
+  <p class="bb-drawer-footer">Beauty, Remembered.</p>
+</div>
+
+<script is:inline>
+  (function () {
+    var hamburger = document.getElementById('siteHamburger');
+    var drawer    = document.getElementById('bbDrawer');
+    var scrim     = document.getElementById('bbScrim');
+    var closeBtn  = document.getElementById('bbDrawerClose');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      scrim.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      scrim.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    if (hamburger && drawer && closeBtn) {
+      hamburger.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      scrim.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+          closeDrawer();
+          hamburger.focus();
+        }
+      });
+    }
+  })();
+</script>

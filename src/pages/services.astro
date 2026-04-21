@@ -56,59 +56,6 @@ const servicesPageSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(servicesPageSchema)} is:inline />
   </Fragment>
 
-  <!-- ─── Nav ─────────────────────────────────────────── -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo" aria-label="Blushed Brides home">Blushed Brides</a>
-      <nav aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services" aria-current="page">Services</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/book" class="btn">Book Now</a></li>
-        </ul>
-      </nav>
-      <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ─── Mobile Menu ──────────────────────────────────────── -->
-  <div class="bb-mobile-overlay" id="bbMobileOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <button class="bb-mobile-close" id="bbMobileClose" aria-label="Close menu">✕</button>
-    <nav>
-      <a href="/" class="mob-link"><span class="mob-num">01 /</span>Home</a>
-      <a href="/services" class="mob-link"><span class="mob-num">02 /</span>Services</a>
-      <a href="/gallery" class="mob-link"><span class="mob-num">03 /</span>Gallery</a>
-      <a href="/about" class="mob-link"><span class="mob-num">04 /</span>About</a>
-      <a href="/faq" class="mob-link"><span class="mob-num">05 /</span>FAQ</a>
-      <a href="/book" class="mob-link mob-cta"><span class="mob-num">→</span>Book Now</a>
-    </nav>
-    <div class="bb-mobile-footer">Beauty, Remembered.</div>
-  </div>
-  <script is:inline>
-    (function() {
-      var hamburger = document.getElementById('siteHamburger');
-      var overlay = document.getElementById('bbMobileOverlay');
-      var close = document.getElementById('bbMobileClose');
-      if (hamburger && overlay && close) {
-        hamburger.addEventListener('click', function() {
-          overlay.classList.add('open');
-          hamburger.setAttribute('aria-expanded', 'true');
-          document.body.style.overflow = 'hidden';
-        });
-        close.addEventListener('click', function() {
-          overlay.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        });
-      }
-    })();
-  </script>
-
   <!-- ─── Page Intro ────────────────────────────────────── -->
   <section class="page-intro">
     <div class="container page-intro-inner">
@@ -374,38 +321,6 @@ const servicesPageSchema = {
       </div>
     </div>
   </section>
-
-  <!-- ─── Footer ────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-logo">Blushed Brides</p>
-        <p class="footer-tagline">Bridal Hair &amp; Makeup — Northern California</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/services">Services</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/about">About</a>
-        <a href="/faq">FAQ</a>
-        <a href="/careers">Join Our Team</a>
-        <a href="/book" class="footer-book">Book Now</a>
-      </nav>
-      <div class="footer-right">
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/blushed_brides/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Blushed Brides on Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@blushed.brides" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Blushed Brides on TikTok">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.25 8.25 0 004.83 1.56V6.79a4.85 4.85 0 01-1.06-.1z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/blushedbrides" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Blushed Brides on Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </a>
-        </div>
-        <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
 
 </BaseLayout>
 

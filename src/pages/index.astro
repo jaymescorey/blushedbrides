@@ -31,9 +31,6 @@ const homePageSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(homePageSchema)} />
   </Fragment>
 
-  <!-- ─── Scroll progress ─────────────────────────────── -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
   <!-- ─── Announcement Bar ────────────────────────────── -->
   <div class="announce-bar" role="banner">
     <div class="announce-inner">
@@ -41,62 +38,6 @@ const homePageSchema = {
       <span class="announce-label">Fall '26: <span class="announce-urgent">4 Dates Remaining</span> · Spring '27 now booking</span>
     </div>
   </div>
-
-  <!-- ─── Nav ─────────────────────────────────────────── -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo" aria-label="Blushed Brides home">
-        <span class="logo-first">Blushed</span>
-        <span class="logo-second">Brides</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/book" class="nav-cta">Book Now</a></li>
-        </ul>
-      </nav>
-      <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ─── Mobile Menu ──────────────────────────────────────── -->
-  <div class="bb-mobile-overlay" id="bbMobileOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <button class="bb-mobile-close" id="bbMobileClose" aria-label="Close menu">✕</button>
-    <nav>
-      <a href="/" class="mob-link"><span class="mob-num">01 /</span>Home</a>
-      <a href="/services" class="mob-link"><span class="mob-num">02 /</span>Services</a>
-      <a href="/gallery" class="mob-link"><span class="mob-num">03 /</span>Gallery</a>
-      <a href="/about" class="mob-link"><span class="mob-num">04 /</span>About</a>
-      <a href="/faq" class="mob-link"><span class="mob-num">05 /</span>FAQ</a>
-      <a href="/book" class="mob-link mob-cta"><span class="mob-num">→</span>Book Now</a>
-    </nav>
-    <div class="bb-mobile-footer">Beauty, Remembered.</div>
-  </div>
-  <script is:inline>
-    (function() {
-      var hamburger = document.getElementById('siteHamburger');
-      var overlay = document.getElementById('bbMobileOverlay');
-      var close = document.getElementById('bbMobileClose');
-      if (hamburger && overlay && close) {
-        hamburger.addEventListener('click', function() {
-          overlay.classList.add('open');
-          hamburger.setAttribute('aria-expanded', 'true');
-          document.body.style.overflow = 'hidden';
-        });
-        close.addEventListener('click', function() {
-          overlay.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        });
-      }
-    })();
-  </script>
 
   <!-- ─── Hero ─────────────────────────────────────────── -->
   <section class="hero">
@@ -727,49 +668,6 @@ const homePageSchema = {
     </div>
   </section>
 
-  <!-- ─── Footer ────────────────────────────────────────── -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-logo">Blushed Brides</p>
-        <p class="footer-tagline">Bridal Hair &amp; Makeup — Northern California</p>
-      </div>
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/services">Services</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/about">About</a>
-        <a href="/faq">FAQ</a>
-        <a href="/careers">Join Our Team</a>
-        <a href="/book" class="footer-book">Book Now</a>
-      </nav>
-      <div class="footer-right">
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/blushed_brides/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Blushed Brides on Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@blushed.brides" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Blushed Brides on TikTok">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.25 8.25 0 004.83 1.56V6.79a4.85 4.85 0 01-1.06-.1z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/blushedbrides" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Blushed Brides on Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </a>
-        </div>
-        <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script is:inline>
-    const bar = document.getElementById('scrollProgress');
-    function updateScrollProgress() {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      bar.style.width = pct + '%';
-    }
-    window.addEventListener('scroll', updateScrollProgress, { passive: true });
-  </script>
-
 </BaseLayout>
 
 <style is:global>
@@ -786,16 +684,7 @@ const homePageSchema = {
     transition: width 0.05s linear;
   }
 
-  /* ─── Header ─────────────────────────────────────────── */
-  .site-header {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding-block: 1rem;
-    background-color: rgba(250, 246, 242, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-  }
-  .header-inner { display: flex; align-items: center; justify-content: space-between; }
+
 
   /* Two-part logo — split treatment inspired by jaymescorey.com */
   .logo {
@@ -890,12 +779,12 @@ const homePageSchema = {
 
   /* ─── Announcement Bar ───────────────────────────────── */
   .announce-bar {
-    background: var(--wine-deep);
-    color: var(--bone);
+    background: var(--blush-dark);
+    color: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     text-align: center;
     position: relative;
-    z-index: 101;
+    z-index: 10;
     overflow: hidden;
   }
   .announce-inner {
@@ -1083,8 +972,8 @@ const homePageSchema = {
     text-transform: uppercase;
     font-weight: 500;
     padding: 18px 32px;
-    background: var(--ink);
-    color: var(--bone);
+    background: var(--blush-dark);
+    color: #fff;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -1224,15 +1113,16 @@ const homePageSchema = {
     position: absolute;
     top: 40px; left: -20px;
     z-index: 3;
-    background: var(--ink);
-    color: var(--bone);
+    background: rgba(255, 250, 247, 0.96);
+    color: var(--ink);
     padding: 20px 24px;
     border-radius: 2px;
     max-width: 240px;
-    box-shadow: 0 20px 50px -15px rgba(20, 16, 13, 0.5);
+    border: 1px solid rgba(212, 137, 154, 0.18);
+    box-shadow: 0 20px 50px -15px rgba(89, 56, 66, 0.22);
   }
   .hero-avail-label {
-    color: var(--gold);
+    color: var(--blush-dark);
     margin-bottom: 8px;
   }
   .hero-avail-text {
@@ -1242,7 +1132,7 @@ const homePageSchema = {
     line-height: 1.35;
     font-weight: 300;
   }
-  .hero-avail-text strong { color: var(--gold); font-weight: 500; }
+  .hero-avail-text strong { color: var(--blush-dark); font-weight: 500; }
 
   /* badge */
   .hero-badge {
@@ -1303,12 +1193,9 @@ const homePageSchema = {
   /* ─── Standards ─────────────────────────────────────── */
   .standards {
     padding-block: var(--space-xl);
-    background-color: var(--ink);
-    background-image:
-      linear-gradient(160deg, rgba(38, 24, 32, 0.96) 0%, rgba(55, 30, 45, 0.98) 100%),
-      var(--texture-dots-dark);
-    background-size: auto, var(--texture-dots-dark-size);
-    background-repeat: no-repeat, repeat;
+    background:
+      radial-gradient(circle at top left, rgba(245, 230, 235, 0.56), transparent 28%),
+      linear-gradient(180deg, #fffdfb 0%, #f7efec 100%);
     position: relative;
     overflow: hidden;
   }
@@ -1335,7 +1222,7 @@ const homePageSchema = {
     font-size: clamp(3rem, 5vw, 4.5rem);
     font-weight: 300;
     line-height: 1.05;
-    color: var(--cream);
+    color: var(--ink);
     letter-spacing: 0.01em;
   }
   .standards-heading em {
@@ -1375,7 +1262,7 @@ const homePageSchema = {
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 600;
-    color: var(--cream);
+    color: var(--ink);
     line-height: 1;
   }
   .standard-card p {
@@ -1393,7 +1280,7 @@ const homePageSchema = {
     font-weight: 500; letter-spacing: 0.15em;
     text-transform: uppercase; color: var(--blush); margin-bottom: 0.75rem;
   }
-  .section-eyebrow.light { color: var(--blush-light); }
+  .section-eyebrow.light { color: var(--blush-dark); }
 
   /* ─── Type Bridge ───────────────────────────────────── */
   .type-bridge {
@@ -1987,12 +1874,9 @@ const homePageSchema = {
   /* ─── Final CTA ──────────────────────────────────────── */
   .final-cta {
     padding-block: var(--space-xl);
-    background-color: var(--blush-dark);
-    background-image:
-      linear-gradient(160deg, rgba(155, 74, 101, 0.92) 0%, rgba(100, 42, 65, 0.94) 100%),
-      var(--texture-dots-dark);
-    background-size: auto, var(--texture-dots-dark-size);
-    background-repeat: no-repeat, repeat;
+    background:
+      radial-gradient(circle at top left, rgba(245, 230, 235, 0.56), transparent 28%),
+      linear-gradient(180deg, #fffdfb 0%, #f7efec 100%);
   }
   .final-cta-inner {
     display: flex; flex-direction: column;
@@ -2000,49 +1884,19 @@ const homePageSchema = {
   }
   .final-cta-inner h2 {
     font-family: var(--font-heading); font-size: var(--text-4xl);
-    font-weight: 700; color: #fff; line-height: 1.1;
+    font-weight: 700; color: var(--ink); line-height: 1.1;
   }
   .final-cta-sub {
     font-family: var(--font-body); font-size: var(--text-base);
-    font-weight: 300; color: var(--blush-light); max-width: 44ch; line-height: 1.6;
+    font-weight: 300; color: var(--ink); opacity: 0.7; max-width: 44ch; line-height: 1.6;
   }
-  .btn-light { background-color: #fff; color: var(--blush-dark); }
-  .btn-light:hover { background-color: var(--blush-light); color: var(--blush-dark); transform: translateY(-1px); }
+  .btn-light { background-color: var(--blush-dark); color: #fff; }
+  .btn-light:hover { background-color: #7d3450; color: #fff; transform: translateY(-1px); }
   .final-avail {
     display: flex; align-items: center; gap: 0.5rem;
     font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.06em; color: var(--blush-light); opacity: 0.8;
+    letter-spacing: 0.06em; color: var(--blush-dark); opacity: 0.8;
   }
-
-  /* ─── Footer ─────────────────────────────────────────── */
-  .site-footer {
-    background-color: var(--ink);
-    background-image: var(--texture-dots-dark);
-    background-size: var(--texture-dots-dark-size);
-    background-repeat: repeat;
-    padding-block: var(--space-lg);
-  }
-  .footer-inner {
-    display: grid; grid-template-columns: 1fr auto 1fr;
-    align-items: center; gap: 2rem;
-  }
-  .footer-logo {
-    font-family: var(--font-heading); font-size: var(--text-xl);
-    font-weight: 700; color: #fff; margin-bottom: 0.25rem;
-  }
-  .footer-tagline {
-    font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.1em; text-transform: uppercase; color: #555;
-  }
-  .footer-nav { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center; }
-  .footer-nav a {
-    font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: #888; text-decoration: none; transition: color 0.2s ease;
-  }
-  .footer-nav a:hover { color: var(--blush); }
-  .footer-book { color: var(--blush) !important; }
-  .footer-copy { font-family: var(--font-body); font-size: var(--text-xs); color: #555; text-align: right; }
 
   /* ─── Keyframes ──────────────────────────────────────── */
   @keyframes fadeIn  { to { opacity: 1; } }

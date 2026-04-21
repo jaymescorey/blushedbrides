@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 interface Props {
   title: string;
@@ -13,7 +15,7 @@ interface Props {
 const {
   title,
   description,
-  ogImage = 'https://blushedbrides.com/images/og-blushedbrides.jpg',
+  ogImage = 'https://blushedbrides.com/images/blushed-brides-on-location-bridal-makeup.png',
   ogImageAlt = 'Blushed Brides — Bridal Hair & Makeup, Northern California',
   canonicalUrl,
   noIndex = false,
@@ -90,7 +92,8 @@ const baseSchema = {
   <meta name="description" content={description}>
   {canonicalUrl && <link rel="canonical" href={canonicalUrl}>}
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="theme-color" content="#C97B8F">
   {noIndex && <meta name="robots" content="noindex, nofollow">}
 
@@ -121,9 +124,10 @@ const baseSchema = {
   <slot name="head" />
 </head>
 <body>
+  <SiteNav />
   <slot />
+  <SiteFooter />
 
-  <!-- Scroll reveals: single fade-up + staggered reveal-block -->
   <script is:inline>
     const scrollReveal = new IntersectionObserver(
       (entries) => {
@@ -136,16 +140,23 @@ const baseSchema = {
       },
       { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
     );
-
     document.querySelectorAll('.fade-up, .reveal-block').forEach((el) => scrollReveal.observe(el));
 
     const header = document.querySelector('.site-header');
     if (header) {
-      const syncHeader = () => {
-        header.classList.toggle('site-header--scrolled', window.scrollY > 28);
-      };
+      const syncHeader = () => header.classList.toggle('site-header--scrolled', window.scrollY > 28);
       syncHeader();
       window.addEventListener('scroll', syncHeader, { passive: true });
+    }
+
+    const bar = document.getElementById('scrollProgress');
+    if (bar) {
+      const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = docHeight > 0 ? (scrollTop / docHeight) * 100 + '%' : '0%';
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
     }
   </script>
 </body>
