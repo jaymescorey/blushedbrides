@@ -367,27 +367,25 @@ const homePageSchema = {
     }
   </style>
 
-  <script is:inline>
-    (function () {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  <script>
+    import { animate, scroll, cubicBezier } from 'motion';
 
-      import('motion').then(({ animate, scroll, cubicBezier }) => {
-        const image = document.querySelector('.sr-scaler img');
-        const section = document.querySelector('.scroll-reveal-wrap');
-        const layers = document.querySelectorAll('.sr-grid > .sr-layer');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const image = document.querySelector('.sr-scaler img') as any;
+      const section = document.querySelector('.scroll-reveal-wrap') as Element;
+      const layers = document.querySelectorAll('.sr-grid > .sr-layer');
 
-        if (!image || !section || !layers.length) return;
-
+      if (image && section && layers.length) {
         const naturalWidth = image.offsetWidth;
         const naturalHeight = image.offsetHeight;
         const vw = window.innerWidth;
         const vh = window.innerHeight;
 
         scroll(
-          animate(image, { width: [vw, naturalWidth], height: [vh, naturalHeight] }, {
+          animate(image, { width: [vw, naturalWidth], height: [vh, naturalHeight] } as any, {
             width: { easing: cubicBezier(0.65, 0, 0.35, 1) },
             height: { easing: cubicBezier(0.42, 0, 0.58, 1) },
-          }),
+          } as any),
           { target: section, offset: ['start start', 'end end'] }
         );
 
@@ -401,17 +399,17 @@ const homePageSchema = {
           const endOffset = `${1 - i * 0.05} end`;
 
           scroll(
-            animate(layer, { opacity: [0, 0, 1] }, { offset: [0, 0.1, 1], easing: cubicBezier(0.61, 1, 0.88, 1) }),
-            { target: section, offset: ['start start', endOffset] }
+            animate(layer as any, { opacity: [0, 0, 1] } as any, { offset: [0, 0.3, 1], easing: cubicBezier(0.61, 1, 0.88, 1) } as any),
+            { target: section, offset: ['start start', endOffset as any] }
           );
 
           scroll(
-            animate(layer, { scale: [0, 0, 1] }, { offset: [0, 0.05, 1], easing: scaleEasings[i] }),
-            { target: section, offset: ['start start', endOffset] }
+            animate(layer as any, { scale: [0, 0, 1] } as any, { offset: [0, 0.15, 1], easing: scaleEasings[i] } as any),
+            { target: section, offset: ['start start', endOffset as any] }
           );
         });
-      });
-    })();
+      }
+    }
   </script>
 
   <!-- ─── Ticker ───────────────────────────────────────── -->
