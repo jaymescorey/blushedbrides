@@ -1,0 +1,865 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Book Your Wedding Day — Blushed Brides"
+  description="Inquire about bridal hair and makeup for your Northern California wedding. Tell us about your date and we'll get back to you within 48 hours."
+  canonicalUrl="https://blushedbrides.com/book"
+>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="nav-logo" aria-label="Blushed Brides home">Blushed Brides</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/book" aria-current="page" class="nav-cta">Book Now</a></li>
+        </ul>
+      </nav>
+      <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Mobile Menu ──────────────────────────────────────── -->
+  <div class="bb-mobile-overlay" id="bbMobileOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="bb-mobile-close" id="bbMobileClose" aria-label="Close menu">✕</button>
+    <nav>
+      <a href="/" class="mob-link"><span class="mob-num">01 /</span>Home</a>
+      <a href="/services" class="mob-link"><span class="mob-num">02 /</span>Services</a>
+      <a href="/gallery" class="mob-link"><span class="mob-num">03 /</span>Gallery</a>
+      <a href="/about" class="mob-link"><span class="mob-num">04 /</span>About</a>
+      <a href="/faq" class="mob-link"><span class="mob-num">05 /</span>FAQ</a>
+      <a href="/book" class="mob-link mob-cta"><span class="mob-num">→</span>Book Now</a>
+    </nav>
+    <div class="bb-mobile-footer">Beauty, Remembered.</div>
+  </div>
+  <script is:inline>
+    (function() {
+      var hamburger = document.getElementById('siteHamburger');
+      var overlay   = document.getElementById('bbMobileOverlay');
+      var close     = document.getElementById('bbMobileClose');
+      if (hamburger && overlay && close) {
+        hamburger.addEventListener('click', function() {
+          overlay.classList.add('open');
+          hamburger.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        });
+        close.addEventListener('click', function() {
+          overlay.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      }
+    })();
+  </script>
+
+  <main class="book-main">
+    <div class="book-layout">
+
+      <!-- ─── Sidebar ──────────────────────────────────────── -->
+      <aside class="book-sidebar">
+        <p class="sidebar-eyebrow">Let's talk about your day</p>
+        <h1 class="sidebar-heading">Check your<br><em>date.</em></h1>
+        <p class="sidebar-sub">
+          Fill out this short form and we'll get back to you within 48 hours
+          to confirm availability and next steps.
+        </p>
+        <div class="sidebar-trust">
+          <div class="trust-item">
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span>Response within 48 hours</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span>No commitment to inquire</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span>Northern California, on-location</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ─── Form Panel ────────────────────────────────────── -->
+      <div class="book-panel">
+
+        <!-- Progress -->
+        <div class="progress-bar" aria-hidden="true">
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-steps">
+            <span class="progress-step active" data-step="1">01</span>
+            <span class="progress-step" data-step="2">02</span>
+            <span class="progress-step" data-step="3">03</span>
+            <span class="progress-step" data-step="4">04</span>
+          </div>
+        </div>
+
+        <form
+          name="booking"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/book/success"
+          id="bookingForm"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="booking" />
+          <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <!-- ─── Step 1: Your Wedding ──────────────────────── -->
+          <fieldset class="form-step active" data-step="1">
+            <legend class="step-legend">
+              <span class="step-num">01 /</span>
+              Your Wedding
+            </legend>
+            <div class="fields">
+              <div class="field field--full">
+                <label for="wedding-date">Wedding Date <span class="req" aria-hidden="true">*</span></label>
+                <input type="date" id="wedding-date" name="wedding_date" required />
+              </div>
+              <div class="field">
+                <label for="venue-name">Venue Name</label>
+                <input type="text" id="venue-name" name="venue_name" placeholder="The Estate at Florian" />
+              </div>
+              <div class="field">
+                <label for="venue-city">City / Area <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="venue-city" name="venue_city" placeholder="Sacramento, Napa, Roseville…" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ─── Step 2: Services ──────────────────────────── -->
+          <fieldset class="form-step" data-step="2">
+            <legend class="step-legend">
+              <span class="step-num">02 /</span>
+              Services
+            </legend>
+            <div class="fields">
+              <div class="field field--full">
+                <label>What do you need? <span class="req" aria-hidden="true">*</span></label>
+                <div class="checkbox-group" role="group" aria-label="Services needed">
+                  <label class="check-option">
+                    <input type="checkbox" name="services" value="Bridal Hair" />
+                    <span class="check-box" aria-hidden="true"></span>
+                    Bridal Hair
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services" value="Bridal Makeup" />
+                    <span class="check-box" aria-hidden="true"></span>
+                    Bridal Makeup
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services" value="Hair + Makeup Bundle" />
+                    <span class="check-box" aria-hidden="true"></span>
+                    Hair + Makeup Bundle
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services" value="Bridal Party" />
+                    <span class="check-box" aria-hidden="true"></span>
+                    Bridal Party
+                  </label>
+                  <label class="check-option">
+                    <input type="checkbox" name="services" value="Not sure yet" />
+                    <span class="check-box" aria-hidden="true"></span>
+                    Not sure yet
+                  </label>
+                </div>
+              </div>
+              <div class="field field--full">
+                <label for="party-size">Estimated Party Size</label>
+                <div class="select-wrap">
+                  <select id="party-size" name="party_size">
+                    <option value="" disabled selected>How many people total?</option>
+                    <option value="Just me (bride only)">Just me (bride only)</option>
+                    <option value="2–3 people">2–3 people</option>
+                    <option value="4–6 people">4–6 people</option>
+                    <option value="7–10 people">7–10 people</option>
+                    <option value="10+ people">10+ people</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ─── Step 3: About You ─────────────────────────── -->
+          <fieldset class="form-step" data-step="3">
+            <legend class="step-legend">
+              <span class="step-num">03 /</span>
+              About You
+            </legend>
+            <div class="fields">
+              <div class="field field--full">
+                <label for="bride-name">Your Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="bride-name" name="name" placeholder="First and last name" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="bride-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="bride-email" name="email" placeholder="you@email.com" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="bride-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="bride-phone" name="phone" placeholder="(916) 555-0100" required autocomplete="tel" />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ─── Step 4: Anything Else ─────────────────────── -->
+          <fieldset class="form-step" data-step="4">
+            <legend class="step-legend">
+              <span class="step-num">04 /</span>
+              Anything Else?
+            </legend>
+            <div class="fields">
+              <div class="field field--full">
+                <label for="referral">How did you hear about us?</label>
+                <div class="select-wrap">
+                  <select id="referral" name="referral">
+                    <option value="" disabled selected>Select one</option>
+                    <option value="Google search">Google search</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Friend or family referral">Friend or family referral</option>
+                    <option value="Venue recommendation">Venue recommendation</option>
+                    <option value="Wedding planner">Wedding planner</option>
+                    <option value="The Knot / WeddingWire">The Knot / WeddingWire</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field field--full">
+                <label for="notes">Anything you'd like us to know?</label>
+                <textarea id="notes" name="notes" rows="5" placeholder="Inspiration, special requests, questions — anything helps."></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ─── Nav Buttons ───────────────────────────────── -->
+          <div class="form-nav">
+            <button type="button" class="btn-back" id="btnBack" aria-label="Previous step">
+              &larr; Back
+            </button>
+            <button type="button" class="btn-next" id="btnNext">
+              Next &rarr;
+            </button>
+            <button type="submit" class="btn-submit" id="btnSubmit">
+              Send Inquiry &rarr;
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Blushed Brides</p>
+        <p class="footer-tagline">Bridal Hair &amp; Makeup — Northern California</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/services">Services</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/about">About</a>
+        <a href="/faq">FAQ</a>
+      </nav>
+      <div class="footer-right">
+        <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+
+/* ─── Header ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--gutter);
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+.site-header--scrolled {
+  background: rgba(250, 246, 242, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 137, 154, 0.15);
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { opacity: 1; }
+.nav-cta {
+  background: var(--blush-dark);
+  color: var(--off-white) !important;
+  opacity: 1 !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+}
+
+/* ─── Page Layout ────────────────────────────────────────── */
+.book-main {
+  min-height: 100vh;
+  padding-top: 5rem;
+  background: linear-gradient(160deg, var(--off-white) 0%, var(--cream) 100%);
+}
+.book-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: start;
+}
+
+/* ─── Sidebar ────────────────────────────────────────────── */
+.book-sidebar {
+  position: sticky;
+  top: 8rem;
+}
+.sidebar-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+  margin-bottom: 1rem;
+  display: block;
+}
+.sidebar-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.75rem, 5vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.sidebar-heading em {
+  display: block;
+  font-style: italic;
+  color: var(--blush-dark);
+}
+.sidebar-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.65;
+  max-width: 36ch;
+  margin-bottom: 2.5rem;
+}
+.sidebar-trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  opacity: 0.6;
+}
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blush);
+  flex-shrink: 0;
+}
+
+/* ─── Form Panel ─────────────────────────────────────────── */
+.book-panel {
+  background: #fff;
+  border: 1px solid rgba(212, 137, 154, 0.18);
+  border-radius: 3px;
+  padding: clamp(1.75rem, 4vw, 3rem);
+}
+
+/* ─── Progress ───────────────────────────────────────────── */
+.progress-bar {
+  margin-bottom: 2.5rem;
+}
+.progress-track {
+  height: 2px;
+  background: rgba(212, 137, 154, 0.15);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--blush-dark);
+  border-radius: 2px;
+  width: 25%;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.progress-steps {
+  display: flex;
+  gap: 1.5rem;
+}
+.progress-step {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  opacity: 0.25;
+  transition: opacity 0.3s, color 0.3s;
+  cursor: default;
+  user-select: none;
+}
+.progress-step.active {
+  color: var(--blush-dark);
+  opacity: 1;
+}
+.progress-step.done {
+  opacity: 0.5;
+}
+
+/* ─── Fieldsets ──────────────────────────────────────────── */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.form-step {
+  display: none;
+}
+.form-step.active {
+  display: block;
+  animation: stepIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.step-legend {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2rem;
+  padding: 0;
+}
+.step-num {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+}
+
+/* ─── Fields ─────────────────────────────────────────────── */
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem 1.5rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.field--full {
+  grid-column: 1 / -1;
+}
+.field label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+}
+.req { color: var(--blush-dark); opacity: 1; }
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(212, 137, 154, 0.35);
+  padding: 0.6rem 0;
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-bottom-color: var(--blush-dark);
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--ink);
+  opacity: 0.28;
+}
+.field input[type="date"] { color-scheme: light; }
+.field textarea { resize: vertical; min-height: 110px; }
+.select-wrap { position: relative; }
+.select-wrap::after {
+  content: '↓';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--text-xs);
+  color: var(--blush-dark);
+  pointer-events: none;
+}
+.field select option { color: var(--ink); background: #fff; }
+
+/* ─── Checkboxes ─────────────────────────────────────────── */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(212, 137, 154, 0.2);
+}
+.check-option {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(212, 137, 154, 0.2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  cursor: pointer;
+  transition: color 0.15s;
+  text-transform: none;
+  letter-spacing: normal;
+  opacity: 1;
+}
+.check-option:hover { color: var(--blush-dark); }
+.check-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.check-box {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 137, 154, 0.45);
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+}
+.check-box::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 6px;
+  width: 5px; height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.15s;
+}
+.check-option input:checked ~ .check-box {
+  background: var(--blush-dark);
+  border-color: var(--blush-dark);
+}
+.check-option input:checked ~ .check-box::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* ─── Form Nav ───────────────────────────────────────────── */
+.form-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 137, 154, 0.15);
+}
+.btn-back {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.4;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+  display: none;
+}
+.btn-back:hover { opacity: 0.75; }
+.btn-next,
+.btn-submit {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--blush-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.875rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  border-radius: 0;
+}
+.btn-next:hover,
+.btn-submit:hover {
+  background: var(--blush);
+  transform: translateY(-1px);
+}
+.btn-submit { display: none; }
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.site-footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(212, 137, 154, 0.15);
+  padding: var(--space-xl) var(--gutter) var(--space-lg);
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-nav a {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--blush); }
+.footer-right { text-align: right; }
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: #555;
+}
+
+/* ─── Utility ────────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .book-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: calc(var(--space-xl) + 1rem);
+  }
+  .book-sidebar { position: static; }
+  .fields { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; text-align: center; }
+  .footer-right { text-align: center; }
+}
+
+</style>
+
+<script is:inline>
+(function () {
+  var TOTAL = 4;
+  var current = 1;
+
+  var form       = document.getElementById('bookingForm');
+  var btnBack    = document.getElementById('btnBack');
+  var btnNext    = document.getElementById('btnNext');
+  var btnSubmit  = document.getElementById('btnSubmit');
+  var fill       = document.getElementById('progressFill');
+
+  function getStep(n) {
+    return form.querySelector('[data-step="' + n + '"]');
+  }
+  function getProgressDot(n) {
+    return document.querySelector('.progress-step[data-step="' + n + '"]');
+  }
+
+  function updateUI() {
+    // Steps
+    form.querySelectorAll('.form-step').forEach(function (s) {
+      s.classList.remove('active');
+    });
+    getStep(current).classList.add('active');
+
+    // Progress fill
+    fill.style.width = (current / TOTAL * 100) + '%';
+
+    // Progress dots
+    document.querySelectorAll('.progress-step').forEach(function (dot) {
+      var n = parseInt(dot.dataset.step);
+      dot.classList.remove('active', 'done');
+      if (n === current) dot.classList.add('active');
+      else if (n < current) dot.classList.add('done');
+    });
+
+    // Back button
+    btnBack.style.display = current > 1 ? 'inline-flex' : 'none';
+
+    // Next vs Submit
+    if (current === TOTAL) {
+      btnNext.style.display   = 'none';
+      btnSubmit.style.display = 'inline-flex';
+    } else {
+      btnNext.style.display   = 'inline-flex';
+      btnSubmit.style.display = 'none';
+    }
+  }
+
+  function validateStep(n) {
+    var step = getStep(n);
+    var required = step.querySelectorAll('[required]');
+    var valid = true;
+    required.forEach(function (el) {
+      el.classList.remove('field-error');
+      if (!el.value.trim()) {
+        el.classList.add('field-error');
+        valid = false;
+      }
+    });
+    // Step 2: at least one service checked
+    if (n === 2) {
+      var checked = step.querySelectorAll('input[name="services"]:checked');
+      if (checked.length === 0) {
+        step.querySelector('.checkbox-group').classList.add('group-error');
+        valid = false;
+      } else {
+        step.querySelector('.checkbox-group').classList.remove('group-error');
+      }
+    }
+    return valid;
+  }
+
+  btnNext.addEventListener('click', function () {
+    if (!validateStep(current)) return;
+    if (current < TOTAL) {
+      current++;
+      updateUI();
+      form.closest('.book-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  btnBack.addEventListener('click', function () {
+    if (current > 1) {
+      current--;
+      updateUI();
+    }
+  });
+
+  // Clear error state on input
+  form.addEventListener('input', function (e) {
+    if (e.target.classList.contains('field-error')) {
+      e.target.classList.remove('field-error');
+    }
+  });
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'services') {
+      form.querySelector('.checkbox-group').classList.remove('group-error');
+    }
+  });
+
+  updateUI();
+})();
+</script>
+
+<style is:global>
+.field-error {
+  border-bottom-color: #c0392b !important;
+}
+.group-error {
+  outline: 1px solid #c0392b;
+  outline-offset: 4px;
+  border-radius: 1px;
+}
+</style>
