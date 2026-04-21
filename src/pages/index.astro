@@ -273,7 +273,7 @@ const homePageSchema = {
 
   <style>
     .scroll-reveal-wrap {
-      min-height: 120vh;
+      min-height: 100vh;
       background: var(--ink);
     }
 
@@ -386,7 +386,7 @@ const homePageSchema = {
             width: { easing: cubicBezier(0.65, 0, 0.35, 1) },
             height: { easing: cubicBezier(0.42, 0, 0.58, 1) },
           } as any),
-          { target: section, offset: ['start start', 'end end'] }
+          { target: section, offset: ['start 70%', 'end end'] }
         );
 
         const scaleEasings = [
@@ -400,12 +400,12 @@ const homePageSchema = {
 
           scroll(
             animate(layer as any, { opacity: [0, 0, 1] } as any, { offset: [0, 0.1, 1], easing: cubicBezier(0.61, 1, 0.88, 1) } as any),
-            { target: section, offset: ['start start', endOffset as any] }
+            { target: section, offset: ['start 70%', endOffset as any] }
           );
 
           scroll(
             animate(layer as any, { scale: [0, 0, 1] } as any, { offset: [0, 0.05, 1], easing: scaleEasings[i] } as any),
-            { target: section, offset: ['start start', endOffset as any] }
+            { target: section, offset: ['start 70%', endOffset as any] }
           );
         });
       }
