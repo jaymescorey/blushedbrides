@@ -115,10 +115,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <input type="hidden" name="form-name" value="booking" />
           <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
-          <!-- ─── Step 1: Your Wedding ──────────────────────── -->
+          <!-- ─── Step 1: About You ────────────────────────── -->
           <fieldset class="form-step active" data-step="1">
             <legend class="step-legend">
               <span class="step-num">01 /</span>
+              About You
+            </legend>
+            <div class="fields">
+              <div class="field">
+                <label for="first-name">First Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="first-name" name="first_name" placeholder="First name" required autocomplete="given-name" />
+              </div>
+              <div class="field">
+                <label for="last-name">Last Name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="last-name" name="last_name" placeholder="Last name" required autocomplete="family-name" />
+              </div>
+              <div class="field">
+                <label for="bride-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="bride-phone" name="phone" placeholder="(916) 555-0100" required autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="bride-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="bride-email" name="email" placeholder="you@email.com" required autocomplete="email" />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- ─── Step 2: Your Wedding ──────────────────────── -->
+          <fieldset class="form-step" data-step="2">
+            <legend class="step-legend">
+              <span class="step-num">02 /</span>
               Your Wedding
             </legend>
             <div class="fields">
@@ -137,10 +163,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </fieldset>
 
-          <!-- ─── Step 2: Services ──────────────────────────── -->
-          <fieldset class="form-step" data-step="2">
+          <!-- ─── Step 3: Services ──────────────────────────── -->
+          <fieldset class="form-step" data-step="3">
             <legend class="step-legend">
-              <span class="step-num">02 /</span>
+              <span class="step-num">03 /</span>
               Services
             </legend>
             <div class="fields">
@@ -187,28 +213,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     <option value="Not sure yet">Not sure yet</option>
                   </select>
                 </div>
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- ─── Step 3: About You ─────────────────────────── -->
-          <fieldset class="form-step" data-step="3">
-            <legend class="step-legend">
-              <span class="step-num">03 /</span>
-              About You
-            </legend>
-            <div class="fields">
-              <div class="field field--full">
-                <label for="bride-name">Your Name <span class="req" aria-hidden="true">*</span></label>
-                <input type="text" id="bride-name" name="name" placeholder="First and last name" required autocomplete="name" />
-              </div>
-              <div class="field">
-                <label for="bride-email">Email <span class="req" aria-hidden="true">*</span></label>
-                <input type="email" id="bride-email" name="email" placeholder="you@email.com" required autocomplete="email" />
-              </div>
-              <div class="field">
-                <label for="bride-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-                <input type="tel" id="bride-phone" name="phone" placeholder="(916) 555-0100" required autocomplete="tel" />
               </div>
             </div>
           </fieldset>
