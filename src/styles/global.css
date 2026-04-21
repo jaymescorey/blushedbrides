@@ -276,3 +276,165 @@ h1, h2, h3, h4 {
     0 22px 48px -28px rgba(38, 24, 32, 0.14);
 }
 
+/* ─── Mobile Hamburger ───────────────────────────────────── */
+.site-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1100;
+}
+.site-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+/* ─── Mobile Overlay ─────────────────────────────────────── */
+.bb-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.012) 3px,
+    rgba(255,255,255,0.012) 4px
+  );
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 10%;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  border-left: 3px solid var(--blush);
+  pointer-events: none;
+}
+.bb-mobile-overlay.open {
+  transform: translateX(0);
+  pointer-events: auto;
+  animation: bb-border-flash 0.55s ease 0.45s both;
+}
+
+.bb-mobile-overlay nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.bb-mobile-overlay .mob-link {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--cream);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(201,123,143,0.12);
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transition: color 0.2s ease;
+  overflow: hidden;
+}
+.bb-mobile-overlay .mob-link:hover { color: var(--blush); }
+.bb-mobile-overlay .mob-link:last-child { border-bottom: none; }
+
+.bb-mobile-overlay.open .mob-link {
+  animation: bb-link-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.bb-mobile-overlay.open .mob-link:nth-child(1) { animation-delay: 0.28s; }
+.bb-mobile-overlay.open .mob-link:nth-child(2) { animation-delay: 0.35s; }
+.bb-mobile-overlay.open .mob-link:nth-child(3) { animation-delay: 0.42s; }
+.bb-mobile-overlay.open .mob-link:nth-child(4) { animation-delay: 0.49s; }
+.bb-mobile-overlay.open .mob-link:nth-child(5) { animation-delay: 0.56s; }
+.bb-mobile-overlay.open .mob-link:nth-child(6) { animation-delay: 0.63s; }
+
+.bb-mobile-overlay .mob-num {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  color: var(--blush);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.bb-mobile-overlay .mob-cta {
+  color: var(--blush);
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  border-bottom: none !important;
+}
+.bb-mobile-overlay .mob-cta .mob-num { color: var(--blush); opacity: 1; }
+
+.bb-mobile-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+  line-height: 1;
+  padding: 0.25rem;
+}
+.bb-mobile-overlay.open .bb-mobile-close {
+  opacity: 0.5;
+  transition: opacity 0.2s ease 0.5s, transform 0.3s ease;
+}
+.bb-mobile-close:hover { opacity: 1 !important; transform: rotate(90deg); }
+
+.bb-mobile-footer {
+  margin-top: 3rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blush);
+  opacity: 0;
+}
+.bb-mobile-overlay.open .bb-mobile-footer {
+  animation: bb-footer-in 0.6s ease 0.85s both;
+}
+
+/* ─── Mobile overlay animations ─────────────────────────── */
+@keyframes bb-link-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bb-border-flash {
+  0%   { border-left-color: var(--blush); }
+  25%  { border-left-color: var(--wine); }
+  50%  { border-left-color: transparent; }
+  75%  { border-left-color: var(--blush); }
+  100% { border-left-color: var(--blush); }
+}
+@keyframes bb-footer-in {
+  from { opacity: 0; letter-spacing: 0.35em; }
+  to   { opacity: 0.6; letter-spacing: 0.18em; }
+}
+
+@media (max-width: 768px) {
+  .site-hamburger { display: flex; }
+}
+

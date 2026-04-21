@@ -1,0 +1,691 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Join Our Team — Blushed Brides"
+  description="Blushed Brides is looking for talented bridal hair and makeup artists in Northern California. Apply to join our team."
+  canonicalUrl="https://blushedbrides.com/careers"
+>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="nav-logo" aria-label="Blushed Brides home">Blushed Brides</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/book" class="nav-cta">Book Now</a></li>
+        </ul>
+      </nav>
+      <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ─── Mobile Menu ──────────────────────────────────────── -->
+  <div class="bb-mobile-overlay" id="bbMobileOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="bb-mobile-close" id="bbMobileClose" aria-label="Close menu">✕</button>
+    <nav>
+      <a href="/" class="mob-link"><span class="mob-num">01 /</span>Home</a>
+      <a href="/services" class="mob-link"><span class="mob-num">02 /</span>Services</a>
+      <a href="/gallery" class="mob-link"><span class="mob-num">03 /</span>Gallery</a>
+      <a href="/about" class="mob-link"><span class="mob-num">04 /</span>About</a>
+      <a href="/faq" class="mob-link"><span class="mob-num">05 /</span>FAQ</a>
+      <a href="/book" class="mob-link mob-cta"><span class="mob-num">→</span>Book Now</a>
+    </nav>
+    <div class="bb-mobile-footer">Beauty, Remembered.</div>
+  </div>
+  <script is:inline>
+    (function() {
+      var hamburger = document.getElementById('siteHamburger');
+      var overlay = document.getElementById('bbMobileOverlay');
+      var close = document.getElementById('bbMobileClose');
+      if (hamburger && overlay && close) {
+        hamburger.addEventListener('click', function() {
+          overlay.classList.add('open');
+          hamburger.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        });
+        close.addEventListener('click', function() {
+          overlay.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      }
+    })();
+  </script>
+
+  <main>
+
+    <!-- ─── Hero ──────────────────────────────────────────── -->
+    <section class="careers-hero">
+      <p class="eyebrow reveal-text">Work With Us</p>
+      <h1 class="careers-heading">
+        <span class="reveal-text">Artists who love</span>
+        <em class="reveal-text-delay">what they do.</em>
+      </h1>
+      <p class="careers-sub fade-up">
+        We're building a team of bridal hair and makeup artists who care about the
+        craft and the client equally. If that sounds like you, we want to hear from you.
+      </p>
+    </section>
+
+    <!-- ─── What We're Looking For ────────────────────────── -->
+    <section class="what-we-need">
+      <div class="container what-inner reveal-block">
+        <div class="what-copy">
+          <p class="eyebrow reveal-child">Who We're Looking For</p>
+          <h2 class="reveal-child">Skilled. Calm.<br>Bride-first.</h2>
+          <p class="reveal-child">
+            Wedding mornings are high-stakes. Our artists show up prepared, stay composed,
+            and keep the energy light. Technical skill matters — so does knowing how to
+            read a room.
+          </p>
+          <p class="reveal-child">
+            We work exclusively with brides and bridal parties across Northern California.
+            On-location only. Our team represents the brand in person, so we care about
+            professionalism as much as artistry.
+          </p>
+        </div>
+        <div class="what-roles reveal-child">
+          <p class="roles-label">Open roles</p>
+          <div class="role-item">
+            <span class="role-num">01</span>
+            <div>
+              <p class="role-title">Bridal Hair Artist</p>
+              <p class="role-desc">Updos, waves, braids, and everything in between. Strong editorial instincts and experience with long-day hold.</p>
+            </div>
+          </div>
+          <div class="role-item">
+            <span class="role-num">02</span>
+            <div>
+              <p class="role-title">Bridal Makeup Artist</p>
+              <p class="role-desc">Airbrush and traditional. Skin-first approach, photography-ready formulas, clean execution under pressure.</p>
+            </div>
+          </div>
+          <div class="role-item">
+            <span class="role-num">03</span>
+            <div>
+              <p class="role-title">Hair &amp; Makeup Artist</p>
+              <p class="role-desc">Both disciplines, bridal focus. Ideal for larger party bookings where one artist handles the full look.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Why Blushed Brides ─────────────────────────────── -->
+    <section class="why-us">
+      <div class="container">
+        <div class="why-header fade-up">
+          <p class="eyebrow">Why Join Us</p>
+          <h2>A team worth being on.</h2>
+        </div>
+        <div class="why-grid fade-up">
+          <div class="why-item">
+            <span class="why-num">01</span>
+            <h3>Bridal-only bookings</h3>
+            <p>No corporate events, no last-minute salon fills. Every booking is intentional, premium, and worth your time.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-num">02</span>
+            <h3>Organized timelines</h3>
+            <p>We handle the scheduling, client communication, and day-of coordination. You show up and do the work you love.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-num">03</span>
+            <h3>Real portfolio work</h3>
+            <p>Elevated editorial clients. Venues worth photographing. Looks that belong in your portfolio, not just behind you.</p>
+          </div>
+          <div class="why-item">
+            <span class="why-num">04</span>
+            <h3>Flexible contract work</h3>
+            <p>We work with artists on a per-booking basis. Build your schedule around your life, not the other way around.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Application Form ───────────────────────────────── -->
+    <section class="apply-section" id="apply">
+      <div class="container apply-inner">
+        <div class="apply-heading fade-up">
+          <p class="eyebrow">Apply</p>
+          <h2>Tell us about yourself.</h2>
+          <p class="apply-sub">We review every application. If there's a fit, we'll reach out within a week.</p>
+        </div>
+        <form
+          class="apply-form fade-up"
+          name="careers"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/careers/success"
+          id="careersForm"
+        >
+          <input type="hidden" name="form-name" value="careers" />
+          <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="role">Role You're Applying For</label>
+              <div class="select-wrap">
+                <select id="role" name="role" required>
+                  <option value="" disabled selected>Select a role</option>
+                  <option value="hair">Bridal Hair Artist</option>
+                  <option value="makeup">Bridal Makeup Artist</option>
+                  <option value="both">Hair &amp; Makeup Artist</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="instagram">Instagram or Portfolio URL</label>
+              <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/yourhandle" />
+            </div>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="message">A little about you</label>
+            <textarea id="message" name="message" rows="5" placeholder="Years of experience, bridal background, what you're looking for..." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn">Send Application &rarr;</button>
+            <p class="form-note">We respond within one week.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ─── Footer ────────────────────────────────────────── -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo">Blushed Brides</p>
+          <p class="footer-tagline">Bridal Hair &amp; Makeup — Northern California</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="/services">Services</a>
+          <a href="/gallery">Gallery</a>
+          <a href="/about">About</a>
+          <a href="/faq">FAQ</a>
+          <a href="/book" class="footer-book">Book Now</a>
+        </nav>
+        <div class="footer-right">
+          <p class="footer-copy">&copy; {new Date().getFullYear()} Blushed Brides. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+</BaseLayout>
+
+<style>
+
+/* ─── Header ─────────────────────────────────────────────── */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--gutter);
+  transition: background 0.3s, backdrop-filter 0.3s;
+}
+.site-header--scrolled {
+  background: rgba(250, 246, 242, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 137, 154, 0.15);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 1; }
+.nav-cta {
+  background: var(--blush-dark);
+  color: var(--off-white) !important;
+  opacity: 1 !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.careers-hero {
+  padding-top: calc(var(--space-2xl) + 1rem);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+  margin-bottom: 1rem;
+  display: block;
+}
+.careers-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
+}
+.careers-heading span { display: block; }
+.careers-heading em {
+  display: block;
+  font-style: italic;
+  color: var(--blush-dark);
+}
+.careers-sub {
+  max-width: 52ch;
+  font-size: var(--text-lg);
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.75;
+}
+
+/* ─── What We're Looking For ─────────────────────────────── */
+.what-we-need {
+  border-top: 1px solid rgba(212, 137, 154, 0.18);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+.what-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+.what-copy h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+}
+.what-copy p {
+  font-size: var(--text-base);
+  line-height: 1.85;
+  color: var(--ink);
+  opacity: 0.75;
+  max-width: 50ch;
+  margin-bottom: 0.9rem;
+}
+.roles-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+  margin-bottom: 1rem;
+  border: 1px solid rgba(212, 137, 154, 0.22);
+  border-bottom: none;
+  padding: 1rem 1.25rem 0;
+  border-radius: 2px 2px 0 0;
+}
+.role-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(212, 137, 154, 0.22);
+  border-top: none;
+  background: rgba(255, 255, 255, 0.5);
+  align-items: start;
+}
+.role-item:last-child {
+  border-radius: 0 0 2px 2px;
+}
+.role-num {
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+  padding-top: 0.15rem;
+}
+.role-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.role-desc {
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--ink);
+  opacity: 0.65;
+}
+
+/* ─── Why Join Us ────────────────────────────────────────── */
+.why-us {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  background: linear-gradient(180deg, var(--cream) 0%, var(--off-white) 100%);
+  border-top: 1px solid rgba(212, 137, 154, 0.18);
+}
+.why-header {
+  max-width: var(--max-width);
+  margin: 0 auto 3rem;
+}
+.why-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-top: 0.5rem;
+}
+.why-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(212, 137, 154, 0.22);
+}
+.why-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2.25rem 2rem 2.25rem 0;
+  border-right: 1px solid rgba(212, 137, 154, 0.22);
+}
+.why-item:last-child { border-right: none; padding-right: 0; }
+.why-item:not(:first-child) { padding-left: 2rem; }
+.why-num {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+}
+.why-item h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--ink);
+}
+.why-item p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* ─── Application Form ───────────────────────────────────── */
+.apply-section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  border-top: 1px solid rgba(212, 137, 154, 0.18);
+}
+.apply-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+.apply-heading {
+  position: sticky;
+  top: 7rem;
+}
+.apply-heading h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0.5rem 0 0.85rem;
+}
+.apply-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  color: var(--ink);
+  opacity: 0.65;
+}
+
+/* ─── Form ───────────────────────────────────────────────── */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-field--full { grid-column: 1 / -1; }
+.form-field label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.65;
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(212, 137, 154, 0.4);
+  padding: 0.6rem 0;
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--ink);
+  opacity: 0.3;
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-bottom-color: var(--blush-dark);
+}
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.select-wrap {
+  position: relative;
+}
+.select-wrap::after {
+  content: '↓';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--text-xs);
+  color: var(--blush-dark);
+  pointer-events: none;
+}
+.form-field select option { color: var(--ink); background: var(--off-white); }
+.form-submit {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+.form-note {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  opacity: 0.45;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--blush-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.875rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.btn:hover { background-color: var(--blush); transform: translateY(-1px); }
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.site-footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(212, 137, 154, 0.15);
+  padding: var(--space-xl) var(--gutter) var(--space-lg);
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-nav a {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--blush); }
+.footer-book { color: var(--blush) !important; }
+.footer-right { text-align: right; }
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: #555;
+}
+
+/* ─── Utility ────────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+@media (max-width: 900px) {
+  .what-inner { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  .why-item { border-right: none; border-bottom: 1px solid rgba(212, 137, 154, 0.22); padding: 1.75rem 0; }
+  .why-item:last-child { border-bottom: none; }
+  .why-item:not(:first-child) { padding-left: 0; }
+  .apply-inner { grid-template-columns: 1fr; }
+  .apply-heading { position: static; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; text-align: center; }
+  .footer-right { text-align: center; }
+}
+@media (max-width: 560px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
+
+</style>

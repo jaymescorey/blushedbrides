@@ -54,6 +54,7 @@ const faqSchema = {
       <a href="/" class="nav-logo" aria-label="Blushed Brides home">Blushed Brides</a>
       <nav aria-label="Main navigation">
         <ul class="nav-links">
+          <li><a href="/">Home</a></li>
           <li><a href="/services">Services</a></li>
           <li><a href="/gallery">Gallery</a></li>
           <li><a href="/about">About</a></li>
@@ -61,28 +62,44 @@ const faqSchema = {
           <li><a href="/book" class="nav-cta">Book Now</a></li>
         </ul>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ─── Mobile Drawer ────────────────────────────────────── -->
-  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
-    <div class="drawer-inner">
-      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
-      <nav aria-label="Mobile navigation">
-        <ul class="drawer-links">
-          <li><a href="/services">Services</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/faq" aria-current="page">FAQ</a></li>
-          <li><a href="/book" class="drawer-cta">Book Now</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- ─── Mobile Menu ──────────────────────────────────────── -->
+  <div class="bb-mobile-overlay" id="bbMobileOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="bb-mobile-close" id="bbMobileClose" aria-label="Close menu">✕</button>
+    <nav>
+      <a href="/" class="mob-link"><span class="mob-num">01 /</span>Home</a>
+      <a href="/services" class="mob-link"><span class="mob-num">02 /</span>Services</a>
+      <a href="/gallery" class="mob-link"><span class="mob-num">03 /</span>Gallery</a>
+      <a href="/about" class="mob-link"><span class="mob-num">04 /</span>About</a>
+      <a href="/faq" class="mob-link"><span class="mob-num">05 /</span>FAQ</a>
+      <a href="/book" class="mob-link mob-cta"><span class="mob-num">→</span>Book Now</a>
+    </nav>
+    <div class="bb-mobile-footer">Beauty, Remembered.</div>
   </div>
-  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <script is:inline>
+    (function() {
+      var hamburger = document.getElementById('siteHamburger');
+      var overlay = document.getElementById('bbMobileOverlay');
+      var close = document.getElementById('bbMobileClose');
+      if (hamburger && overlay && close) {
+        hamburger.addEventListener('click', function() {
+          overlay.classList.add('open');
+          hamburger.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        });
+        close.addEventListener('click', function() {
+          overlay.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      }
+    })();
+  </script>
 
   <main>
 

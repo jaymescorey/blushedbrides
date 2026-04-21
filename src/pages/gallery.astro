@@ -79,14 +79,51 @@ const galleryPageSchema = {
     <nav class="nav-inner">
       <a href="/" class="nav-logo">Blushed Brides</a>
       <ul class="nav-links">
+        <li><a href="/">Home</a></li>
         <li><a href="/services">Services</a></li>
         <li><a href="/gallery" class="active">Gallery</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/faq">FAQ</a></li>
         <li><a href="/book" class="nav-cta">Book Now</a></li>
       </ul>
+      <button class="site-hamburger" id="siteHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
+
+  <!-- ─── Mobile Menu ──────────────────────────────────────── -->
+  <div class="bb-mobile-overlay" id="bbMobileOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="bb-mobile-close" id="bbMobileClose" aria-label="Close menu">✕</button>
+    <nav>
+      <a href="/" class="mob-link"><span class="mob-num">01 /</span>Home</a>
+      <a href="/services" class="mob-link"><span class="mob-num">02 /</span>Services</a>
+      <a href="/gallery" class="mob-link"><span class="mob-num">03 /</span>Gallery</a>
+      <a href="/about" class="mob-link"><span class="mob-num">04 /</span>About</a>
+      <a href="/faq" class="mob-link"><span class="mob-num">05 /</span>FAQ</a>
+      <a href="/book" class="mob-link mob-cta"><span class="mob-num">→</span>Book Now</a>
+    </nav>
+    <div class="bb-mobile-footer">Beauty, Remembered.</div>
+  </div>
+  <script is:inline>
+    (function() {
+      var hamburger = document.getElementById('siteHamburger');
+      var overlay = document.getElementById('bbMobileOverlay');
+      var close = document.getElementById('bbMobileClose');
+      if (hamburger && overlay && close) {
+        hamburger.addEventListener('click', function() {
+          overlay.classList.add('open');
+          hamburger.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        });
+        close.addEventListener('click', function() {
+          overlay.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      }
+    })();
+  </script>
 
   <main>
 
@@ -664,6 +701,9 @@ const galleryPageSchema = {
 }
 
 /* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
 @media (max-width: 640px) {
   .gallery-columns {
     grid-template-columns: 1fr;

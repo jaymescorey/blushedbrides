@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Application Received — Blushed Brides"
+  description="Thanks for applying to join the Blushed Brides team."
+  canonicalUrl="https://blushedbrides.com/careers/success"
+  noIndex={true}
+>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/" class="nav-logo" aria-label="Blushed Brides home">Blushed Brides</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/book" class="nav-cta">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="success-main">
+    <div class="success-inner">
+      <p class="eyebrow">Application Received</p>
+      <h1>We'll be in touch.</h1>
+      <p class="success-sub">
+        Thanks for reaching out. We review every application and respond within one week
+        if there's a fit.
+      </p>
+      <a href="/" class="btn">Back to Home &rarr;</a>
+    </div>
+  </main>
+
+</BaseLayout>
+
+<style>
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--gutter);
+  background: rgba(250, 246, 242, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 137, 154, 0.15);
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 1; }
+.nav-cta {
+  background: var(--blush-dark);
+  color: var(--off-white) !important;
+  opacity: 1 !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+}
+.success-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+  background: linear-gradient(180deg, var(--off-white) 0%, var(--cream) 100%);
+}
+.success-inner {
+  max-width: 480px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blush-dark);
+  display: block;
+}
+.success-inner h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--ink);
+  font-style: italic;
+}
+.success-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: var(--ink);
+  opacity: 0.65;
+  max-width: 40ch;
+  margin-bottom: 0.5rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--blush-dark);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.875rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.btn:hover { background-color: var(--blush); transform: translateY(-1px); }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+</style>
