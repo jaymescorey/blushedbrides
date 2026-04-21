@@ -41,6 +41,11 @@ const schemaGraph = [
       'Bridal Party Hair and Makeup',
       'Bridal Beauty Trials',
     ],
+    sameAs: [
+      'https://www.instagram.com/blushed_brides/',
+      'https://www.tiktok.com/@blushed.brides',
+      'https://www.facebook.com/blushedbrides',
+    ],
   },
   {
     '@type': 'WebSite',
@@ -111,7 +116,7 @@ const baseSchema = {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-  <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(baseSchema)} is:inline />
 
   <slot name="head" />
 </head>
