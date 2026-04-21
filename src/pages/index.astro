@@ -236,6 +236,187 @@ const homePageSchema = {
     </div>
   </section>
 
+  <!-- ─── Scroll Reveal Gallery ──────────────────────────── -->
+  <section class="scroll-reveal-wrap" aria-label="Bridal portfolio preview">
+    <div class="scroll-reveal-content">
+      <div class="sr-grid">
+        <!-- Layer 1: Outer edges -->
+        <div class="sr-layer">
+          <div><img src="/images/blushed-brides-bridal-hair-updo-elegant.jpg" alt="Bridal hair updo" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-bridal-soft-glam-makeup-look.jpg" alt="Soft glam bridal makeup" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-wedding-day-bridal-party-prep.jpg" alt="Bridal party prep" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-bridal-morning-prep-hair-updo.jpg" alt="Morning prep hair updo" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-on-site-bridal-hair-styling.png" alt="On-site hair styling" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-wedding-day-soft-romantic-hair.jpg" alt="Soft romantic wedding hair" loading="lazy" /></div>
+        </div>
+        <!-- Layer 2: Inner columns -->
+        <div class="sr-layer">
+          <div><img src="/images/blushed-brides-bridal-party-hair-styling.png" alt="Bridal party hair" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-bride-glam-wedding-makeup.jpg" alt="Glam wedding makeup" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-bridal-hair-makeup-wedding-look.jpg" alt="Wedding hair and makeup" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-bride-airbrush-makeup-wedding.jpg" alt="Airbrush wedding makeup" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-wedding-day-bridal-beauty.jpg" alt="Wedding day bridal beauty" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-on-location-wedding-beauty.jpg" alt="On-location wedding beauty" loading="lazy" /></div>
+        </div>
+        <!-- Layer 3: Center column top and bottom -->
+        <div class="sr-layer">
+          <div><img src="/images/blushed-brides-bridal-prep-morning-getting-ready.jpg" alt="Morning bridal prep" loading="lazy" /></div>
+          <div><img src="/images/blushed-brides-wedding-morning-bridal-beauty.jpg" alt="Wedding morning beauty" loading="lazy" /></div>
+        </div>
+        <!-- Center scaler image -->
+        <div class="sr-scaler">
+          <img src="/images/blushed-brides-bride-natural-glam-makeup.jpg" alt="Bridal natural glam makeup" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .scroll-reveal-wrap {
+      min-height: 240vh;
+      background: var(--ink);
+    }
+
+    .scroll-reveal-content {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      place-items: center;
+      position: sticky;
+      top: 0;
+      overflow: hidden;
+    }
+
+    .sr-grid {
+      --gap: clamp(10px, 7.35vw, 80px);
+      --container-width: 1600px;
+      --offset: 0;
+
+      width: var(--container-width);
+      max-width: calc(100% - 4rem);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: var(--gap);
+      margin: 0 auto;
+      align-content: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+
+    @media (max-width: 600px) {
+      .sr-grid {
+        grid-template-columns: repeat(3, 1fr);
+        --offset: -1;
+        max-width: calc(100% - 2rem);
+      }
+      .sr-grid > .sr-layer:nth-of-type(1) {
+        display: none;
+      }
+    }
+
+    .sr-grid > .sr-layer {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+    }
+
+    .sr-grid > .sr-layer:nth-of-type(1) div:nth-of-type(odd) { grid-column: 1; }
+    .sr-grid > .sr-layer:nth-of-type(1) div:nth-of-type(even) { grid-column: -2; }
+
+    .sr-grid > .sr-layer:nth-of-type(2) div:nth-of-type(odd) { grid-column: calc(2 + var(--offset)); }
+    .sr-grid > .sr-layer:nth-of-type(2) div:nth-of-type(even) { grid-column: calc(-3 - var(--offset)); }
+
+    .sr-grid > .sr-layer:nth-of-type(3) div:first-of-type {
+      grid-column: calc(3 + var(--offset));
+      grid-row: 1;
+    }
+    .sr-grid > .sr-layer:nth-of-type(3) div:last-of-type {
+      grid-column: calc(3 + var(--offset));
+      grid-row: -1;
+    }
+
+    .sr-grid img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+
+    .sr-scaler {
+      grid-area: 2 / calc(3 + var(--offset));
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    .sr-scaler img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+  <script>
+    import { animate, scroll, cubicBezier } from 'motion';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      const image = document.querySelector('.sr-scaler img') as HTMLElement;
+      const section = document.querySelector('.scroll-reveal-wrap') as HTMLElement;
+      const layers = document.querySelectorAll<HTMLElement>('.sr-grid > .sr-layer');
+
+      if (image && section && layers.length) {
+        const naturalWidth = image.offsetWidth;
+        const naturalHeight = image.offsetHeight;
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        scroll(
+          animate(image, {
+            width: [vw, naturalWidth],
+            height: [vh, naturalHeight],
+          }, {
+            width: { easing: cubicBezier(0.65, 0, 0.35, 1) },
+            height: { easing: cubicBezier(0.42, 0, 0.58, 1) },
+          }),
+          { target: section, offset: ['start start', '80% end'] }
+        );
+
+        const scaleEasings = [
+          cubicBezier(0.42, 0, 0.58, 1),
+          cubicBezier(0.76, 0, 0.24, 1),
+          cubicBezier(0.87, 0, 0.13, 1),
+        ];
+
+        layers.forEach((layer, i) => {
+          const endOffset = `${1 - i * 0.05} end` as `${number} end`;
+
+          scroll(
+            animate(layer, { opacity: [0, 0, 1] }, { offset: [0, 0.55, 1], easing: cubicBezier(0.61, 1, 0.88, 1) }),
+            { target: section, offset: ['start start', endOffset] }
+          );
+
+          scroll(
+            animate(layer, { scale: [0, 0, 1] }, { offset: [0, 0.3, 1], easing: scaleEasings[i] }),
+            { target: section, offset: ['start start', endOffset] }
+          );
+        });
+      }
+    }
+  </script>
+
   <!-- ─── Ticker ───────────────────────────────────────── -->
   <div class="ticker fade-up" aria-hidden="true">
     <div class="ticker-track">
