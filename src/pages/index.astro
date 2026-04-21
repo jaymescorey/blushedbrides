@@ -273,7 +273,7 @@ const homePageSchema = {
 
   <style>
     .scroll-reveal-wrap {
-      min-height: 240vh;
+      min-height: 160vh;
       background: var(--ink);
     }
 
@@ -367,31 +367,28 @@ const homePageSchema = {
     }
   </style>
 
-  <script>
-    import { animate, scroll, cubicBezier } from 'motion';
+  <script is:inline>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      import('motion').then(({ animate, scroll, cubicBezier }) => {
+        const image = document.querySelector('.sr-scaler img');
+        const section = document.querySelector('.scroll-reveal-wrap');
+        const layers = document.querySelectorAll('.sr-grid > .sr-layer');
 
-    if (!prefersReducedMotion) {
-      const image = document.querySelector('.sr-scaler img') as HTMLElement;
-      const section = document.querySelector('.scroll-reveal-wrap') as HTMLElement;
-      const layers = document.querySelectorAll<HTMLElement>('.sr-grid > .sr-layer');
+        if (!image || !section || !layers.length) return;
 
-      if (image && section && layers.length) {
         const naturalWidth = image.offsetWidth;
         const naturalHeight = image.offsetHeight;
         const vw = window.innerWidth;
         const vh = window.innerHeight;
 
         scroll(
-          animate(image, {
-            width: [vw, naturalWidth],
-            height: [vh, naturalHeight],
-          }, {
+          animate(image, { width: [vw, naturalWidth], height: [vh, naturalHeight] }, {
             width: { easing: cubicBezier(0.65, 0, 0.35, 1) },
             height: { easing: cubicBezier(0.42, 0, 0.58, 1) },
           }),
-          { target: section, offset: ['start start', '80% end'] }
+          { target: section, offset: ['start start', 'end end'] }
         );
 
         const scaleEasings = [
@@ -401,20 +398,20 @@ const homePageSchema = {
         ];
 
         layers.forEach((layer, i) => {
-          const endOffset = `${1 - i * 0.05} end` as `${number} end`;
+          const endOffset = `${1 - i * 0.05} end`;
 
           scroll(
-            animate(layer, { opacity: [0, 0, 1] }, { offset: [0, 0.55, 1], easing: cubicBezier(0.61, 1, 0.88, 1) }),
+            animate(layer, { opacity: [0, 0, 1] }, { offset: [0, 0.1, 1], easing: cubicBezier(0.61, 1, 0.88, 1) }),
             { target: section, offset: ['start start', endOffset] }
           );
 
           scroll(
-            animate(layer, { scale: [0, 0, 1] }, { offset: [0, 0.3, 1], easing: scaleEasings[i] }),
+            animate(layer, { scale: [0, 0, 1] }, { offset: [0, 0.05, 1], easing: scaleEasings[i] }),
             { target: section, offset: ['start start', endOffset] }
           );
         });
-      }
-    }
+      });
+    })();
   </script>
 
   <!-- ─── Ticker ───────────────────────────────────────── -->
