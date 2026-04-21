@@ -301,14 +301,7 @@ h1, h2, h3, h4 {
 .bb-mobile-overlay {
   position: fixed;
   inset: 0;
-  background: var(--ink);
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 3px,
-    rgba(255,255,255,0.012) 3px,
-    rgba(255,255,255,0.012) 4px
-  );
+  background: var(--bone-pure);
   z-index: 1050;
   display: flex;
   flex-direction: column;
@@ -340,7 +333,7 @@ h1, h2, h3, h4 {
   font-size: clamp(2.2rem, 9vw, 3.5rem);
   font-style: italic;
   font-weight: 300;
-  color: var(--cream);
+  color: var(--ink);
   text-decoration: none;
   display: flex;
   align-items: baseline;
@@ -390,7 +383,7 @@ h1, h2, h3, h4 {
   right: 1.75rem;
   background: none;
   border: none;
-  color: var(--cream);
+  color: var(--ink);
   font-size: 1.5rem;
   cursor: pointer;
   opacity: 0;
