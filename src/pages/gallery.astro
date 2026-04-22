@@ -364,6 +364,9 @@ const galleryPageSchema = {
   text-align: center;
   padding-left: var(--gutter);
   padding-right: var(--gutter);
+  background:
+    url('/images/pattern-01.png') no-repeat center top / cover,
+    linear-gradient(180deg, var(--bone) 0%, var(--off-white) 100%);
 }
 .eyebrow {
   font-family: var(--font-body);
@@ -515,7 +518,8 @@ const galleryPageSchema = {
 .gallery-cta {
   text-align: center;
   padding: var(--space-xl) var(--gutter);
-  background-image:
+  background:
+    url('/images/pattern-01.png') no-repeat center center / cover,
     linear-gradient(to bottom, var(--off-white), var(--cream));
 }
 .gallery-cta h2 {

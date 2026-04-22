@@ -779,13 +779,14 @@ const homePageSchema = {
 
   /* ─── Announcement Bar ───────────────────────────────── */
   .announce-bar {
-    background: var(--blush-dark);
-    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 253, 250, 0.97);
+    color: var(--blush-dark);
     padding: 10px 20px;
     text-align: center;
     position: relative;
     z-index: 10;
     overflow: hidden;
+    border-bottom: 2px solid rgba(212, 137, 154, 0.35);
   }
   .announce-inner {
     display: inline-flex;
@@ -796,8 +797,8 @@ const homePageSchema = {
     display: inline-block;
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
+    background: var(--blush-dark);
+    box-shadow: 0 0 8px var(--blush);
     animation: livePulse 2s ease infinite;
   }
   .announce-label {
@@ -807,10 +808,10 @@ const homePageSchema = {
     text-transform: uppercase;
     font-weight: 500;
   }
-  .announce-urgent { color: var(--gold); font-weight: 500; }
+  .announce-urgent { color: var(--blush-dark); font-weight: 600; }
   @keyframes livePulse {
-    0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--gold); }
-    50% { opacity: 0.5; box-shadow: 0 0 16px var(--gold); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--blush); }
+    50% { opacity: 0.5; box-shadow: 0 0 16px var(--blush-dark); }
   }
 
   /* ─── Hero ───────────────────────────────────────────── */
@@ -820,31 +821,33 @@ const homePageSchema = {
     padding: 80px 40px 60px;
     overflow: hidden;
     background-color: var(--bone);
+    background-image: url('/images/pattern-01.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  /* dark overlay so white text reads on the floral pattern */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(38, 15, 25, 0.42) 0%,
+      rgba(38, 15, 25, 0.22) 55%,
+      rgba(38, 15, 25, 0.08) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
   }
 
   /* dot texture */
   .dot-field {
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(38, 24, 32, 0.07) 1px, transparent 1px);
-    background-size: 28px 28px;
-    pointer-events: none;
-    opacity: 0.5;
-    mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
+    display: none;
   }
 
-  /* thin vertical rule lines */
-  .hairline-v {
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: var(--hairline);
-    pointer-events: none;
-    z-index: 1;
-  }
-  .hairline-v.v1 { left: 16.66%; }
-  .hairline-v.v2 { right: 16.66%; }
+  .hairline-v { display: none; }
 
   /* sparkles */
   .sparkle {
@@ -893,9 +896,9 @@ const homePageSchema = {
     align-items: center;
     gap: 12px;
     padding: 8px 16px;
-    border: 1px solid var(--hairline);
+    border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 100px;
-    background: rgba(250, 246, 240, 0.5);
+    background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(8px);
     margin-bottom: 28px;
   }
@@ -903,7 +906,7 @@ const homePageSchema = {
     display: inline-block;
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--oxblood);
+    background: var(--blush-dark);
     animation: livePulse 2s ease infinite;
   }
   .hero-mono {
@@ -912,7 +915,7 @@ const homePageSchema = {
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--ink);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   /* headline */
@@ -922,14 +925,14 @@ const homePageSchema = {
     font-size: clamp(54px, 7vw, 96px);
     line-height: 0.96;
     letter-spacing: -0.045em;
-    color: var(--ink);
+    color: #fff;
     margin-bottom: 32px;
     position: relative;
   }
   .hero-headline em {
     font-style: italic;
     font-weight: 500;
-    color: var(--wine);
+    color: rgba(255, 255, 255, 0.92);
     position: relative;
     display: inline-block;
   }
@@ -952,7 +955,7 @@ const homePageSchema = {
     font-family: var(--font-body);
     font-size: 18px;
     line-height: 1.6;
-    color: var(--wine-deep);
+    color: rgba(255, 255, 255, 0.88);
     max-width: 480px;
     margin-bottom: 36px;
   }
@@ -986,7 +989,7 @@ const homePageSchema = {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--wine) 0%, var(--oxblood) 100%);
+    background: linear-gradient(135deg, var(--blush-dark) 0%, var(--blush) 100%);
     transform: translateY(101%);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -1002,16 +1005,16 @@ const homePageSchema = {
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 500;
-    color: var(--ink);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     padding: 18px 8px;
-    border-bottom: 1px solid var(--ink);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     transition: gap 0.3s, color 0.3s;
     display: inline-flex;
     align-items: center;
     gap: 10px;
   }
-  .hero-btn-secondary:hover { gap: 18px; color: var(--wine); }
+  .hero-btn-secondary:hover { gap: 18px; color: #fff; }
 
   /* stamps */
   .hero-stamps {
@@ -1020,14 +1023,14 @@ const homePageSchema = {
     gap: 1rem;
     margin-bottom: 32px;
     padding-bottom: 32px;
-    border-bottom: 1px solid var(--hairline);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     max-width: 520px;
   }
   .h-stamp {
     width: 120px;
     height: 120px;
     flex-shrink: 0;
-    color: var(--wine);
+    color: rgba(255, 255, 255, 0.7);
     opacity: 0.75;
     filter: drop-shadow(1px 2px 6px rgba(58, 21, 32, 0.12));
     transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1056,11 +1059,11 @@ const homePageSchema = {
   .hero-social-text {
     font-family: var(--font-body);
     font-size: 13px;
-    color: var(--smoke);
+    color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
   }
   .hero-social-text strong {
-    color: var(--ink);
+    color: #fff;
     font-weight: 500;
     font-style: italic;
   }
@@ -1873,14 +1876,16 @@ const homePageSchema = {
 
   /* ─── Final CTA ──────────────────────────────────────── */
   .final-cta {
-    padding-block: var(--space-xl);
+    position: relative;
+    padding-block: calc(var(--space-xl) * 1.5);
     background:
-      radial-gradient(circle at top left, rgba(245, 230, 235, 0.56), transparent 28%),
+      linear-gradient(rgba(253,242,244,0.88), rgba(252,232,236,0.88)),
+      url('/images/pattern-01.png') no-repeat center center / cover,
       linear-gradient(180deg, #fffdfb 0%, #f7efec 100%);
   }
   .final-cta-inner {
     display: flex; flex-direction: column;
-    align-items: center; text-align: center; gap: 1.25rem;
+    align-items: center; text-align: center; gap: 1.5rem;
   }
   .final-cta-inner h2 {
     font-family: var(--font-heading); font-size: var(--text-4xl);
@@ -1888,14 +1893,14 @@ const homePageSchema = {
   }
   .final-cta-sub {
     font-family: var(--font-body); font-size: var(--text-base);
-    font-weight: 300; color: var(--ink); opacity: 0.7; max-width: 44ch; line-height: 1.6;
+    font-weight: 300; color: var(--ink); max-width: 44ch; line-height: 1.6;
   }
   .btn-light { background-color: var(--blush-dark); color: #fff; }
   .btn-light:hover { background-color: #7d3450; color: #fff; transform: translateY(-1px); }
   .final-avail {
     display: flex; align-items: center; gap: 0.5rem;
     font-family: var(--font-body); font-size: var(--text-xs);
-    letter-spacing: 0.06em; color: var(--blush-dark); opacity: 0.8;
+    letter-spacing: 0.06em; color: var(--blush-dark);
   }
 
   /* ─── Keyframes ──────────────────────────────────────── */

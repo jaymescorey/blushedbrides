@@ -9,7 +9,7 @@
   --cream:        #f5eee8;
   --taupe:        #9E9088;
   --ink:          #33262d;
-  --off-white:    #fffaf7;
+  --off-white:    #fdf2f4;
 
   /* Extended palette */
   --wine:       #3a1520;
@@ -21,7 +21,7 @@
   --hairline:   #eadbd4;
   --blush-soft: #e8cfc9;
   --rust:       #b8462a;
-  --bone:       #f6f1ea;
+  --bone:       #fce8ec;
   --bone-pure:  #fffdfa;
 
   /* Typography */
@@ -256,6 +256,8 @@ h1, h2, h3, h4 {
   position: sticky;
   top: 0;
   z-index: 200;
+  background: rgba(255, 253, 250, 0.97);
+  border-bottom: 1px solid rgba(212, 137, 154, 0.2);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -668,11 +670,25 @@ h1, h2, h3, h4 {
 }
 
 .standards,
-.lookbook,
-.final-cta {
+.lookbook {
   background:
     radial-gradient(circle at top left, rgba(245, 230, 235, 0.56), transparent 28%),
     linear-gradient(180deg, #fffdfb 0%, #f7efec 100%);
+  color: var(--ink);
+}
+
+.final-cta {
+  position: relative;
+  padding-block: calc(var(--space-xl) * 1.5);
+  background:
+    linear-gradient(rgba(253,242,244,0.94), rgba(252,232,236,0.94)),
+    url('/images/pattern-01.png') no-repeat center center / cover,
+    linear-gradient(180deg, #fffdfb 0%, #f7efec 100%);
+  color: var(--ink);
+}
+
+.final-cta h2,
+.final-cta .final-cta-sub {
   color: var(--ink);
 }
 
@@ -691,8 +707,7 @@ h1, h2, h3, h4 {
 }
 
 .lookbook .lookbook-list,
-.lookbook .lookbook-stage,
-.final-cta .final-cta-inner {
+.lookbook .lookbook-stage {
   background: rgba(255, 255, 255, 0.68);
   box-shadow: 0 22px 50px -34px rgba(89, 56, 66, 0.16);
 }
